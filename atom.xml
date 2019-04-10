@@ -39,11 +39,11 @@
   </entry>
   
   <entry>
-    <title>Hello World</title>
-    <link href="https://chlinlearn.cn/2019/04/04/hello-world/"/>
-    <id>https://chlinlearn.cn/2019/04/04/hello-world/</id>
+    <title>新篇章</title>
+    <link href="https://chlinlearn.cn/2019/04/04/1/"/>
+    <id>https://chlinlearn.cn/2019/04/04/1/</id>
     <published>2019-04-03T22:45:21.667Z</published>
-    <updated>2019-04-10T11:18:31.414Z</updated>
+    <updated>2019-04-10T11:51:48.368Z</updated>
     
     <summary type="html">
     
@@ -51,12 +51,17 @@
       
         
         
-          &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
+          &lt;pre&gt;&lt;code&gt;hi,大家好！准备了好久，下了很大的决心，终于可以开始更博啦！
+&lt;/code&gt;&lt;/pre&gt;
         
       
     
     </summary>
     
+      <category term="other" scheme="https://chlinlearn.cn/categories/other/"/>
+    
+    
+      <category term="other" scheme="https://chlinlearn.cn/tags/other/"/>
     
   </entry>
   
