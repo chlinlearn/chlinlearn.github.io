@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chlinlearn.cn/"/>
-  <updated>2019-04-08T07:27:25.488Z</updated>
+  <updated>2019-04-14T08:43:52.031Z</updated>
   <id>https://chlinlearn.cn/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>python实现DFA模拟程序</title>
+    <link href="https://chlinlearn.cn/2019/04/14/1/"/>
+    <id>https://chlinlearn.cn/2019/04/14/1/</id>
+    <published>2019-04-13T16:00:00.000Z</published>
+    <updated>2019-04-14T08:43:52.031Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;DFA-9C27B0-（确定的有穷自动机）&quot;&gt;&lt;a href=&quot;#DFA-9C27B0-（确定的有穷自动机）&quot; class=&quot;headerlink&quot; title=&quot;==DFA #9C27B0==（确定的有穷自动机）&quot;&gt;&lt;/a&gt;==DFA
+        
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://chlinlearn.cn/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://chlinlearn.cn/tags/python/"/>
+    
+      <category term="DFA" scheme="https://chlinlearn.cn/tags/DFA/"/>
+    
+  </entry>
   
   <entry>
     <title>小书匠</title>

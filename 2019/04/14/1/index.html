@@ -103,13 +103,20 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="chlinlearn&#39;s blog">
-<meta property="og:url" content="https://chlinlearn.cn/index.html">
+  <meta name="description" content="==DFA #9C27B0==（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 123G[">
+<meta name="keywords" content="python,DFA">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python实现DFA模拟程序">
+<meta property="og:url" content="https://chlinlearn.cn/2019/04/14/1/index.html">
 <meta property="og:site_name" content="chlinlearn&#39;s blog">
+<meta property="og:description" content="==DFA #9C27B0==（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 123G[">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://chlinlearn.cn/2019/04/14/1/images/DFA.jpg">
+<meta property="og:updated_time" content="2019-04-14T08:43:52.031Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="chlinlearn&#39;s blog">
+<meta name="twitter:title" content="python实现DFA模拟程序">
+<meta name="twitter:description" content="==DFA #9C27B0==（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 123G[">
+<meta name="twitter:image" content="https://chlinlearn.cn/2019/04/14/1/images/DFA.jpg">
 
 
 
@@ -119,7 +126,7 @@
 
   
   
-  <link rel="canonical" href="https://chlinlearn.cn/">
+  <link rel="canonical" href="https://chlinlearn.cn/2019/04/14/1/">
 
 
 
@@ -129,7 +136,7 @@
   };
 </script>
 
-  <title>chlinlearn's blog</title>
+  <title>python实现DFA模拟程序 | chlinlearn's blog</title>
   
 
 
@@ -177,8 +184,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -220,7 +226,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -362,9 +368,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -396,10 +402,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/14/1/" class="post-title-link" itemprop="url">python实现DFA模拟程序</a>
+          <h1 class="post-title" itemprop="name headline">python实现DFA模拟程序
+
               
             
           </h1>
@@ -461,6 +465,9 @@
           
 
 		 
+		   <span class="post-meta-divider">|</span>
+		   <span id="busuanzi_value_page_pv"></span>次阅读
+		 
 
           
 
@@ -479,9 +486,7 @@
       
 
       
-        
-          
-            <h2 id="DFA-9C27B0-（确定的有穷自动机）"><a href="#DFA-9C27B0-（确定的有穷自动机）" class="headerlink" title="==DFA #9C27B0==（确定的有穷自动机）"></a>==DFA #9C27B0==（确定的有穷自动机）</h2><p>一个确定的有穷自动机M是一个五元组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M=(K，∑，f，S，Z)</span><br></pre></td></tr></table></figure></p>
+        <h2 id="DFA-9C27B0-（确定的有穷自动机）"><a href="#DFA-9C27B0-（确定的有穷自动机）" class="headerlink" title="==DFA #9C27B0==（确定的有穷自动机）"></a>==DFA #9C27B0==（确定的有穷自动机）</h2><p>一个确定的有穷自动机M是一个五元组：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">M=(K，∑，f，S，Z)</span><br></pre></td></tr></table></figure></p>
 <ol>
 <li>K是一个有穷集，它的每个元素称为一个状态。</li>
 <li>∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。</li>
@@ -504,8 +509,6 @@
 <h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>==java #9C27B0==版DFA</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.ArrayList;</span><br><span class="line"><span class="keyword">import</span> java.util.List;</span><br><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">edge</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">    char PriorityState;</span><br><span class="line">    char ch; </span><br><span class="line">    char NextState;</span><br><span class="line">    edge(char p,char c, char n)&#123;</span><br><span class="line">        PriorityState = p;</span><br><span class="line">        ch = c;</span><br><span class="line">        NextState = n;</span><br><span class="line">    &#125;</span><br><span class="line">    @Override</span><br><span class="line">    public <span class="built_in">String</span> toString() &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">"edge [PriorityState="</span> + PriorityState + <span class="string">", ch="</span> + ch + <span class="string">", NextState="</span> + NextState + <span class="string">"]"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/**DFA的构造*/</span></span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">DFA</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> List&lt;edge&gt; listEdge = <span class="keyword">new</span> ArrayList&lt;edge&gt;();<span class="comment">//状态集</span></span><br><span class="line">    <span class="comment">//static HashMap&lt;edge, Character&gt; mapEdge = new HashMap&lt;&gt;();</span></span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">String</span> S;<span class="comment">//初态集</span></span><br><span class="line">    <span class="keyword">static</span> <span class="built_in">String</span> Z;<span class="comment">//终态集</span></span><br><span class="line">    <span class="comment">//flag is here</span></span><br><span class="line">    <span class="keyword">static</span> boolean judeZ(char ch)&#123;       </span><br><span class="line">        <span class="keyword">for</span>(int j=<span class="number">0</span>; j&lt;Z.length(); j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(Z.charAt(j)==ch) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> input() &#123;</span><br><span class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="built_in">String</span> instr = <span class="literal">null</span>;</span><br><span class="line">        <span class="built_in">String</span> subStr[] = <span class="literal">null</span>;</span><br><span class="line">        System.out.println(<span class="string">"请输入开始符："</span>);</span><br><span class="line">        S = <span class="keyword">in</span>.next();</span><br><span class="line">        System.out.println(<span class="string">"请输入终态集(终集符组成的一个字符串)："</span>);</span><br><span class="line">        Z = <span class="keyword">in</span>.next();</span><br><span class="line">        System.out.println(<span class="string">"请输入正规文法以end结尾(形式如下图)："</span>);</span><br><span class="line">        System.out.println(<span class="string">"----------"</span>);</span><br><span class="line">        System.out.println(<span class="string">"|  S-aU  |"</span>);</span><br><span class="line">        System.out.println(<span class="string">"|  S-bV  |"</span>);</span><br><span class="line">        System.out.println(<span class="string">"|  U-bV  |"</span>);</span><br><span class="line">        System.out.println(<span class="string">"|  ....  |"</span>);</span><br><span class="line">        System.out.println(<span class="string">"|  end   |"</span>);</span><br><span class="line">        System.out.println(<span class="string">"----------"</span>);</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">in</span>.hasNext())&#123;</span><br><span class="line">            instr = <span class="keyword">in</span>.next();</span><br><span class="line">            <span class="keyword">if</span>(<span class="string">"end"</span>.equals(instr)) </span><br><span class="line">            	<span class="keyword">break</span>;</span><br><span class="line">            subStr = instr.split(<span class="string">"-|\\|"</span>);<span class="comment">//连字符</span></span><br><span class="line">            System.out.println(<span class="string">"subStr:"</span>+subStr);</span><br><span class="line">            <span class="built_in">String</span> s = subStr[<span class="number">0</span>];<span class="comment">//读取一行f(转换函数)</span></span><br><span class="line">            System.out.println(s);</span><br><span class="line">            <span class="keyword">for</span>(int i=<span class="number">1</span>; i&lt;subStr.length; i++)&#123;</span><br><span class="line">                edge e = <span class="literal">null</span>;</span><br><span class="line">                System.out.println(subStr[<span class="number">1</span>]);</span><br><span class="line">                <span class="keyword">if</span>(subStr[i].length()==<span class="number">2</span>)&#123;</span><br><span class="line">                    char c = subStr[i].charAt(<span class="number">0</span>);<span class="comment">//字母表</span></span><br><span class="line">                    char n = subStr[i].charAt(<span class="number">1</span>);<span class="comment">//状态集</span></span><br><span class="line">                    listEdge.add(<span class="keyword">new</span> edge(s.charAt(<span class="number">0</span>),c,n));<span class="comment">//f(S,a)=U</span></span><br><span class="line">                &#125;</span><br><span class="line">                </span><br><span class="line">                <span class="keyword">if</span>(subStr[i].length()==<span class="number">1</span>)&#123;</span><br><span class="line">                    char c = subStr[i].charAt(<span class="number">0</span>);</span><br><span class="line">                    listEdge.add(<span class="keyword">new</span> edge(s.charAt(<span class="number">0</span>),c,Z.charAt(<span class="number">0</span>)));</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> char judeNextState(char s,char ch)&#123;</span><br><span class="line">        <span class="keyword">for</span>(int i=<span class="number">0</span>; i&lt;listEdge.size(); i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(s==listEdge.get(i).PriorityState &amp;&amp; ch==listEdge.get(i).ch)&#123;</span><br><span class="line">                <span class="keyword">return</span> listEdge.get(i).NextState;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">'0'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">void</span> judeDFA()&#123;</span><br><span class="line">        Scanner <span class="keyword">in</span> = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        System.out.println(<span class="string">"请输入要判断的字符串:"</span>);</span><br><span class="line">        <span class="keyword">while</span>(<span class="keyword">in</span>.hasNext())&#123;</span><br><span class="line">            <span class="built_in">String</span> str = <span class="keyword">in</span>.next();</span><br><span class="line">            <span class="keyword">if</span>(str.equals(<span class="string">"#"</span>))&#123;</span><br><span class="line">                System.out.println(<span class="string">"程序已退出，欢迎下次使用!"</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            char temp = S.charAt(<span class="number">0</span>);</span><br><span class="line">            int i=<span class="number">0</span>;</span><br><span class="line">            <span class="comment">//System.out.println(temp+" "+mapEdge.get(e));</span></span><br><span class="line">            <span class="keyword">for</span>(; i&lt;str.length(); i++)&#123;</span><br><span class="line">                <span class="comment">//System.out.println("temp="+temp);</span></span><br><span class="line">                <span class="keyword">if</span>(str.charAt(i)==<span class="string">'a'</span>)&#123;</span><br><span class="line">                    temp = judeNextState(temp, <span class="string">'a'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">if</span>(str.charAt(i)==<span class="string">'b'</span>)&#123;</span><br><span class="line">                    temp = judeNextState(temp, <span class="string">'b'</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">//flag is here</span></span><br><span class="line">            <span class="keyword">if</span>(i&gt;=str.length() &amp;&amp; judeZ(temp)) System.out.println(<span class="string">"此字符串“属于”该文法！"</span>);</span><br><span class="line">            <span class="keyword">else</span> System.out.println(<span class="string">"此字符串“不属于”该文法！"</span>);</span><br><span class="line">            System.out.println(<span class="string">"再次判断请输入字符串(退出程序输入#):"</span>);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/*main*/</span></span><br><span class="line">    public <span class="keyword">static</span> <span class="keyword">void</span> main(<span class="built_in">String</span>[] args) &#123;</span><br><span class="line">        <span class="comment">// TODO Auto-generated method stub</span></span><br><span class="line">        DFA.input();</span><br><span class="line">        DFA.judeDFA();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
 
@@ -526,314 +529,38 @@
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chlinlearn.cn/2019/04/06/first-titlt/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chlinlearn">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="chlinlearn's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/06/first-titlt/" class="post-title-link" itemprop="url">小书匠</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-06 07:42:48" itemprop="dateCreated datePublished" datetime="2019-04-06T07:42:48+08:00">2019-04-06</time>
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag"><i class="fa fa-tag"></i> python</a>
           
-            
-            
+            <a href="/tags/DFA/" rel="tag"><i class="fa fa-tag"></i> DFA</a>
           
-
-          
-          
-
-          
-
-		 
-
-          
-
-          
-
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hello story!</span><br></pre></td></tr></table></figure>
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
       
 
       
       
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
       
 
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://chlinlearn.cn/2019/04/04/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="chlinlearn">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/header.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="chlinlearn's blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/04/04/1/" class="post-title-link" itemprop="url">新篇章</a>
-              
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
+              <a href="/2019/04/06/first-titlt/" rel="next" title="小书匠">
+                <i class="fa fa-chevron-left"></i> 小书匠
+              </a>
             
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-04-04 06:45:21" itemprop="dateCreated datePublished" datetime="2019-04-04T06:45:21+08:00">2019-04-04</time>
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/other/" itemprop="url" rel="index"><span itemprop="name">other</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-		 
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <hr>
-<p>hi,大家好！准备了好久，下了很大的决心，终于可以开始更博啦！</p>
-
-          
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -843,14 +570,15 @@
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -870,8 +598,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -999,6 +736,23 @@
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#DFA-9C27B0-（确定的有穷自动机）"><span class="nav-text">==DFA #9C27B0==（确定的有穷自动机）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实例代码"><span class="nav-text">实例代码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附件"><span class="nav-text">附件</span></a></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1199,6 +953,10 @@
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.0"></script>
+<script src="/js/post-details.js?v=7.1.0"></script>
+
+
 
   
 
@@ -1214,6 +972,8 @@
 
   
 
+
+  
 
 
   
