@@ -103,19 +103,19 @@
 
 
 
-  <meta name="description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 1234G[S]:   S-&amp;gt">
+  <meta name="description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法1234G[S]:   S-&amp;gt;">
 <meta name="keywords" content="python,DFA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="python实现DFA模拟程序">
 <meta property="og:url" content="https://chlinlearn.cn/2019/04/14/1/index.html">
 <meta property="og:site_name" content="chlinlearn&#39;s blog">
-<meta property="og:description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 1234G[S]:   S-&amp;gt">
+<meta property="og:description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法1234G[S]:   S-&amp;gt;">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://chlinlearn.cn/2019/04/14/1/images/DFA.jpg">
-<meta property="og:updated_time" content="2019-04-14T08:56:48.294Z">
+<meta property="og:updated_time" content="2019-04-14T11:42:19.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python实现DFA模拟程序">
-<meta name="twitter:description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法 1234G[S]:   S-&amp;gt">
+<meta name="twitter:description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：1M=(K，∑，f，S，Z)  K是一个有穷集，它的每个元素称为一个状态。 ∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。 f是转换函数，是Kx∑-&amp;gt;K上的映象。 S∈K，是唯一的一个初态。 Z∈K，是一个终态集，终态也称可接受状态或结束状态。  实例代码 实现文法1234G[S]:   S-&amp;gt;">
 <meta name="twitter:image" content="https://chlinlearn.cn/2019/04/14/1/images/DFA.jpg">
 
 
@@ -514,11 +514,12 @@
 <li>Z∈K，是一个终态集，终态也称可接受状态或结束状态。</li>
 </ol>
 <h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><ol>
-<li><p>实现文法</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">G[S]:   </span><br><span class="line">S-&gt;aU|bV</span><br><span class="line">U-&gt;bV|aQ</span><br><span class="line">Q-&gt;aQ|bQ</span><br></pre></td></tr></table></figure>
+<li>实现文法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">G[S]:   </span><br><span class="line">S-&gt;aU|bV</span><br><span class="line">U-&gt;bV|aQ</span><br><span class="line">Q-&gt;aQ|bQ</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>状态图<br><img src="./images/DFA.jpg" alt="DFA状态图"></p>
-</li>
+</ol>
+<a id="more"></a>
+<ol start="2">
+<li>状态图<br><img src="./images/DFA.jpg" alt="DFA状态图"></li>
 </ol>
 <ol start="3">
 <li>代码实现</li>
@@ -565,8 +566,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/06/first-titlt/" rel="next" title="小书匠">
-                <i class="fa fa-chevron-left"></i> 小书匠
+              <a href="/2019/04/04/1/" rel="next" title="新篇章">
+                <i class="fa fa-chevron-left"></i> 新篇章
               </a>
             
           </div>
@@ -648,7 +649,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-count">2</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
