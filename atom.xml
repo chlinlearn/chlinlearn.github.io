@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chlinlearn.cn/"/>
-  <updated>2019-04-14T12:45:37.161Z</updated>
+  <updated>2019-04-14T12:49:42.888Z</updated>
   <id>https://chlinlearn.cn/</id>
   
   <author>
@@ -21,11 +21,17 @@
     <link href="https://chlinlearn.cn/1.html"/>
     <id>https://chlinlearn.cn/1.html</id>
     <published>2019-04-13T16:00:00.000Z</published>
-    <updated>2019-04-14T12:45:37.161Z</updated>
+    <updated>2019-04-14T12:49:42.888Z</updated>
     
     <summary type="html">
     
-      使用python实现DFA模拟程序。
+      
+      
+        
+        
+          &lt;h2 id=&quot;DFA（确定的有穷自动机）&quot;&gt;&lt;a href=&quot;#DFA（确定的有穷自动机）&quot; class=&quot;headerlink&quot;
+        
+      
     
     </summary>
     
