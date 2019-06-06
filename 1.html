@@ -4,10 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="新篇章, chlinlearn">
-    <meta name="description" content="
-hi,大家好！准备了好久，下了很大的决心，终于可以开始更博啦！
-">
+    <meta name="keywords" content="python实现DFA模拟程序, chlinlearn">
+    <meta name="description" content="DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：
+M=(K，∑，f，S，Z)
+
+
+K是一个有穷集，它的每个元素称为一个状态。
+∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。
+f是转换函数，是Kx∑">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -15,7 +19,7 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>新篇章 | chlinlearn&#39;s blog</title>
+    <title>python实现DFA模拟程序 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -285,13 +289,13 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        新篇章
+                        python实现DFA模拟程序
                     </div>
                 </div>
             </div>
@@ -383,8 +387,12 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/other/" target="_blank">
-                                <span class="chip bg-color">other</span>
+                            <a href="/tags/python/" target="_blank">
+                                <span class="chip bg-color">python</span>
+                            </a>
+                        
+                            <a href="/tags/DFA/" target="_blank">
+                                <span class="chip bg-color">DFA</span>
                             </a>
                         
                     </div>
@@ -395,8 +403,8 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/other/" class="post-category" target="_blank">
-                                other
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                python
                             </a>
                         
                     </div>
@@ -407,21 +415,21 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-04
+                    2019-04-14
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        25
+                        1.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        5 分
                     </div>
                     
                 
@@ -437,8 +445,236 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <hr>
-<p>hi,大家好！准备了好久，下了很大的决心，终于可以开始更博啦！</p>
+                <h2 id="DFA（确定的有穷自动机）"><a href="#DFA（确定的有穷自动机）" class="headerlink" title="DFA（确定的有穷自动机）"></a>DFA（确定的有穷自动机）</h2><p>一个确定的有穷自动机M是一个五元组：</p>
+<pre class=" language-javascript"><code class="language-javascript">M<span class="token operator">=</span><span class="token punctuation">(</span>K，∑，f，S，Z<span class="token punctuation">)</span>
+</code></pre>
+<ol>
+<li>K是一个有穷集，它的每个元素称为一个状态。</li>
+<li>∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。</li>
+<li>f是转换函数，是Kx∑-&gt;K上的映象。</li>
+<li>S∈K，是唯一的一个初态。</li>
+<li>Z∈K，是一个终态集，终态也称可接受状态或结束状态。</li>
+</ol>
+<h2 id="实例代码"><a href="#实例代码" class="headerlink" title="实例代码"></a>实例代码</h2><ol>
+<li><p>实现文法</p>
+<pre class=" language-javascript"><code class="language-javascript">G<span class="token punctuation">[</span>S<span class="token punctuation">]</span><span class="token punctuation">:</span>   
+S<span class="token operator">-</span><span class="token operator">></span>aU<span class="token operator">|</span>bV
+U<span class="token operator">-</span><span class="token operator">></span>bV<span class="token operator">|</span>aQ
+Q<span class="token operator">-</span><span class="token operator">></span>aQ<span class="token operator">|</span>bQ
+</code></pre>
+</li>
+<li><p>状态图<br><img src="./images/DFA.jpg" alt="DFA.jpg"></p>
+</li>
+</ol>
+<ol start="3">
+<li>代码实现</li>
+</ol>
+<pre class=" language-javascript"><code class="language-javascript"> <span class="token operator">-</span><span class="token operator">*</span><span class="token operator">-</span> coding<span class="token punctuation">:</span> utf<span class="token number">-8</span> <span class="token operator">-</span><span class="token operator">*</span><span class="token operator">-</span> #
+#@author<span class="token punctuation">:</span> chlinlearn
+#@createTime<span class="token punctuation">:</span> <span class="token number">2019</span><span class="token operator">/</span><span class="token number">4</span><span class="token operator">/</span><span class="token number">13</span> <span class="token number">14</span><span class="token punctuation">:</span><span class="token number">12</span>
+#@fileName<span class="token punctuation">:</span> DFA
+<span class="token keyword">class</span> <span class="token class-name">DFA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+    def <span class="token function">__init__</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        #状态集
+        self<span class="token punctuation">.</span>listEdge <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        #初态
+        self<span class="token punctuation">.</span>S <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        #终态
+        self<span class="token punctuation">.</span>Z <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+
+    #判断是否是终态集
+    def <span class="token function">isZ</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>ch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>Z<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">:</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span>Z<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">==</span> ch or self<span class="token punctuation">.</span>Z<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">==</span> ch<span class="token punctuation">:</span>
+                <span class="token keyword">return</span> True
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> False
+
+    #输入
+    def <span class="token function">input</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        self<span class="token punctuation">.</span>S <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">"请输入开始符："</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>Z <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token string">"请输入终态集(终集符组成的一个字符串)："</span><span class="token punctuation">)</span>
+        self<span class="token punctuation">.</span>Z <span class="token operator">=</span> self<span class="token punctuation">.</span>Z<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">","</span><span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请输入正规文法以exit结尾："</span><span class="token punctuation">)</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"example:S,aZ"</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>True<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            list <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+            inStr <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> inStr<span class="token operator">==</span><span class="token string">'exit'</span><span class="token punctuation">:</span>
+                <span class="token keyword">break</span>
+            inStr <span class="token operator">=</span> inStr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">','</span><span class="token punctuation">)</span>
+            # 读取第一个状态集
+            s <span class="token operator">=</span> inStr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">len</span><span class="token punctuation">(</span>inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                #ch<span class="token punctuation">,</span>ns
+                <span class="token keyword">if</span> <span class="token function">len</span><span class="token punctuation">(</span>inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">:</span>
+                    c <span class="token operator">=</span> inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    n <span class="token operator">=</span> inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+                    list <span class="token operator">=</span> <span class="token punctuation">[</span>s<span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">]</span>
+                    self<span class="token punctuation">.</span>listEdge<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+                elif <span class="token function">len</span><span class="token punctuation">(</span>inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">:</span>
+                    c <span class="token operator">=</span> inStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+                    list <span class="token operator">=</span> <span class="token punctuation">[</span>s<span class="token punctuation">,</span> c<span class="token punctuation">,</span> self<span class="token punctuation">.</span>Z<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
+                    self<span class="token punctuation">.</span>listEdge<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>list<span class="token punctuation">)</span>
+
+    #转换函数
+    def <span class="token function">isNextState</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span>s<span class="token punctuation">,</span>ch<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">len</span><span class="token punctuation">(</span>self<span class="token punctuation">.</span>listEdge<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">if</span> s <span class="token operator">==</span> self<span class="token punctuation">.</span>listEdge<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> and ch <span class="token operator">==</span> self<span class="token punctuation">.</span>listEdge<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> self<span class="token punctuation">.</span>listEdge<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
+        <span class="token keyword">return</span>
+
+    def <span class="token function">judgeDFA</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+        <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"请输入要判断的字符串:"</span><span class="token punctuation">)</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>True<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            #获取字母表
+            str <span class="token operator">=</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+            <span class="token keyword">if</span> <span class="token string">'#'</span> <span class="token keyword">in</span> str <span class="token punctuation">:</span>
+                <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"程序已退出，欢迎下次使用!"</span><span class="token punctuation">)</span>
+                <span class="token keyword">return</span>
+            temp <span class="token operator">=</span> self<span class="token punctuation">.</span>S<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+            <span class="token keyword">for</span> i <span class="token keyword">in</span> <span class="token function">range</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token function">len</span><span class="token punctuation">(</span>str<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">if</span> str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> is <span class="token string">'a'</span><span class="token punctuation">:</span>
+                    temp <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token function">isNextState</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span><span class="token string">'a'</span><span class="token punctuation">)</span>
+                elif str<span class="token punctuation">[</span>i<span class="token punctuation">]</span> is <span class="token string">'b'</span><span class="token punctuation">:</span>
+                    temp <span class="token operator">=</span> self<span class="token punctuation">.</span><span class="token function">isNextState</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span>
+                <span class="token keyword">else</span><span class="token punctuation">:</span>
+                    <span class="token keyword">break</span>
+            <span class="token keyword">if</span> self<span class="token punctuation">.</span><span class="token function">isZ</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"此字符串“属于”该文法！"</span><span class="token punctuation">)</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"此字符串“不属于”该文法！"</span><span class="token punctuation">)</span>
+            <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"再次判断请输入字符串(退出程序输入#):"</span><span class="token punctuation">)</span>
+
+<span class="token keyword">if</span> __name__ <span class="token operator">==</span> <span class="token string">'__main__'</span><span class="token punctuation">:</span>
+    DFA <span class="token operator">=</span> <span class="token function">DFA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    DFA<span class="token punctuation">.</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+    DFA<span class="token punctuation">.</span><span class="token function">judgeDFA</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这是我在课程中的一个实验，代码手写并且可运行，是参照一个java版的代码实现的，加上自己的理解和思路把它以python的形式实现。学习别人好的地方，当然也不能照搬别人，不然能够为己用的东西少之又少。通过不同的编程语言把整个思路在理一遍能够加深自己的理解，并且能够得到一样的运行结果，说明自己的理解是对的。最后也附上对应的java版代码，有需求的童鞋可以参考喔！<br>欢迎访问我的个人网站<a href="www.chlinlearn.cn">www.chlinlearn.cn</a></p>
+<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>java版DFA</p>
+<pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>ArrayList<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>List<span class="token punctuation">;</span>
+<span class="token keyword">import</span> java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Scanner<span class="token punctuation">;</span>
+
+<span class="token keyword">class</span> <span class="token class-name">edge</span> <span class="token punctuation">{</span>
+
+    char PriorityState<span class="token punctuation">;</span>
+    char ch<span class="token punctuation">;</span> 
+    char NextState<span class="token punctuation">;</span>
+    <span class="token function">edge</span><span class="token punctuation">(</span>char p<span class="token punctuation">,</span>char c<span class="token punctuation">,</span> char n<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        PriorityState <span class="token operator">=</span> p<span class="token punctuation">;</span>
+        ch <span class="token operator">=</span> c<span class="token punctuation">;</span>
+        NextState <span class="token operator">=</span> n<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    @Override
+    <span class="token keyword">public</span> String <span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"edge [PriorityState="</span> <span class="token operator">+</span> PriorityState <span class="token operator">+</span> <span class="token string">", ch="</span> <span class="token operator">+</span> ch <span class="token operator">+</span> <span class="token string">", NextState="</span> <span class="token operator">+</span> NextState <span class="token operator">+</span> <span class="token string">"]"</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token comment" spellcheck="true">/**DFA的构造*/</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DFA</span> <span class="token punctuation">{</span>
+    <span class="token keyword">static</span> List<span class="token operator">&lt;</span>edge<span class="token operator">></span> listEdge <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span>edge<span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//状态集</span>
+    <span class="token comment" spellcheck="true">//static HashMap&lt;edge, Character> mapEdge = new HashMap&lt;>();</span>
+    <span class="token keyword">static</span> String S<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//初态集</span>
+    <span class="token keyword">static</span> String Z<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//终态集</span>
+    <span class="token comment" spellcheck="true">//flag is here</span>
+    <span class="token keyword">static</span> boolean <span class="token function">judeZ</span><span class="token punctuation">(</span>char ch<span class="token punctuation">)</span><span class="token punctuation">{</span>       
+        <span class="token keyword">for</span><span class="token punctuation">(</span>int j<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">&lt;</span>Z<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> j<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>Z<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>j<span class="token punctuation">)</span><span class="token operator">==</span>ch<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Scanner <span class="token keyword">in</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String instr <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        String subStr<span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入开始符："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        S <span class="token operator">=</span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入终态集(终集符组成的一个字符串)："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Z <span class="token operator">=</span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入正规文法以end结尾(形式如下图)："</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"|  S-aU  |"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"|  S-bV  |"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"|  U-bV  |"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"|  ....  |"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"|  end   |"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"----------"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            instr <span class="token operator">=</span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token string">"end"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>instr<span class="token punctuation">)</span><span class="token punctuation">)</span> 
+                <span class="token keyword">break</span><span class="token punctuation">;</span>
+            subStr <span class="token operator">=</span> instr<span class="token punctuation">.</span><span class="token function">split</span><span class="token punctuation">(</span><span class="token string">"-|\\|"</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//连字符</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"subStr:"</span><span class="token operator">+</span>subStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String s <span class="token operator">=</span> subStr<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//读取一行f(转换函数)</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span>int i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>subStr<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                edge e <span class="token operator">=</span> <span class="token keyword">null</span><span class="token punctuation">;</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>subStr<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>subStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    char c <span class="token operator">=</span> subStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//字母表</span>
+                    char n <span class="token operator">=</span> subStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//状态集</span>
+                    listEdge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">edge</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>c<span class="token punctuation">,</span>n<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//f(S,a)=U</span>
+                <span class="token punctuation">}</span>
+
+                <span class="token keyword">if</span><span class="token punctuation">(</span>subStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token operator">==</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    char c <span class="token operator">=</span> subStr<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                    listEdge<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">edge</span><span class="token punctuation">(</span>s<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span>c<span class="token punctuation">,</span>Z<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> char <span class="token function">judeNextState</span><span class="token punctuation">(</span>char s<span class="token punctuation">,</span>char ch<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span>int i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>listEdge<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>s<span class="token operator">==</span>listEdge<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>PriorityState <span class="token operator">&amp;&amp;</span> ch<span class="token operator">==</span>listEdge<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>ch<span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token keyword">return</span> listEdge<span class="token punctuation">.</span><span class="token keyword">get</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">.</span>NextState<span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> <span class="token string">'0'</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">judeDFA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        Scanner <span class="token keyword">in</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Scanner</span><span class="token punctuation">(</span>System<span class="token punctuation">.</span><span class="token keyword">in</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"请输入要判断的字符串:"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">hasNext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            String str <span class="token operator">=</span> <span class="token keyword">in</span><span class="token punctuation">.</span><span class="token function">next</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span><span class="token string">"#"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"程序已退出，欢迎下次使用!"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            char temp <span class="token operator">=</span> S<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            int i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>
+            <span class="token comment" spellcheck="true">//System.out.println(temp+" "+mapEdge.get(e));</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">//System.out.println("temp="+temp);</span>
+                <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    temp <span class="token operator">=</span> <span class="token function">judeNextState</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token string">'a'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>str<span class="token punctuation">.</span><span class="token function">charAt</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+                    temp <span class="token operator">=</span> <span class="token function">judeNextState</span><span class="token punctuation">(</span>temp<span class="token punctuation">,</span> <span class="token string">'b'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token punctuation">}</span>
+                <span class="token keyword">else</span> <span class="token keyword">break</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token comment" spellcheck="true">//flag is here</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">>=</span>str<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">&amp;&amp;</span> <span class="token function">judeZ</span><span class="token punctuation">(</span>temp<span class="token punctuation">)</span><span class="token punctuation">)</span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"此字符串“属于”该文法！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">else</span> System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"此字符串“不属于”该文法！"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"再次判断请输入字符串(退出程序输入#):"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/*main*/</span>
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// TODO Auto-generated method stub</span>
+        DFA<span class="token punctuation">.</span><span class="token function">input</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        DFA<span class="token punctuation">.</span><span class="token function">judeDFA</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
 
             </div>
             <hr>
@@ -579,7 +815,7 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/1.html" class="b-link-green">新篇章</a>
+                    <a href="/1.html" class="b-link-green">python实现DFA模拟程序</a>
                 </p>
             </div>
         </div>
@@ -608,29 +844,29 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="python实现DFA模拟程序">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="java学习(基础篇01)—数组模拟实现栈">
                         
-                        <span class="card-title">python实现DFA模拟程序</span>
+                        <span class="card-title">java学习(基础篇01)—数组模拟实现栈</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：
-M=(K，∑，f，S，Z)
+                    <div class="summary">栈的概念
+先进后出策略(LIFO)
+是一种基本数据结构
+栈的分类有两种：1.静态栈（数组实现） 2.动态栈（链表实现）
+栈的模型图如下：
 
-
-K是一个有穷集，它的每个元素称为一个状态。
-∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。
-f是转换函数，是Kx∑</div>
+需求分析在编写代码之前，我习惯先对要实现的程序进行需求分析，比如用什么数据结构存储数据，需要实现哪些</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/python/" class="post-category" target="_blank">
-                                    python
+                            <a href="/categories/java-基础篇/" class="post-category" target="_blank">
+                                    java,基础篇
                                 </a>
                             
                             
@@ -640,12 +876,12 @@ f是转换函数，是Kx∑</div>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/python/" target="_blank">
-                        <span class="chip bg-color">python</span>
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="/tags/DFA/" target="_blank">
-                        <span class="chip bg-color">DFA</span>
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
                     </a>
                     
                 </div>
@@ -663,25 +899,29 @@ f是转换函数，是Kx∑</div>
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="新篇章">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="python实现DFA模拟程序">
                         
-                        <span class="card-title">新篇章</span>
+                        <span class="card-title">python实现DFA模拟程序</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">
-hi,大家好！准备了好久，下了很大的决心，终于可以开始更博啦！
-</div>
+                    <div class="summary">DFA（确定的有穷自动机）一个确定的有穷自动机M是一个五元组：
+M=(K，∑，f，S，Z)
+
+
+K是一个有穷集，它的每个元素称为一个状态。
+∑是一个有穷字母表，它的每一个元素称为一个输入符号，所以也陈∑为输入符号表。
+f是转换函数，是Kx∑</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-14
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/other/" class="post-category" target="_blank">
-                                    other
+                            <a href="/categories/python/" class="post-category" target="_blank">
+                                    python
                                 </a>
                             
                             
@@ -692,8 +932,12 @@ hi,大家好！准备了好久，下了很大的决心，终于可以开始更�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/other/" target="_blank">
-                        <span class="chip bg-color">other</span>
+                    <a href="/tags/python/" target="_blank">
+                        <span class="chip bg-color">python</span>
+                    </a>
+                    
+                    <a href="/tags/DFA/" target="_blank">
+                        <span class="chip bg-color">DFA</span>
                     </a>
                     
                 </div>
