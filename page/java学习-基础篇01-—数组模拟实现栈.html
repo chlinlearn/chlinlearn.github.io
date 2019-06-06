@@ -449,7 +449,7 @@
 <li>先进后出策略(LIFO)</li>
 <li>是一种基本数据结构</li>
 <li>栈的分类有两种：1.静态栈（数组实现） 2.动态栈（链表实现）</li>
-<li>栈的模型图如下：<br><img src="./images/栈模型_1.jpg" alt="栈模型图"></li>
+<li>栈的模型图如下：<br><img src="./images/栈模型.jpg" alt="栈模型图"></li>
 </ul>
 <h2 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h2><p>在编写代码之前，我习惯先对要实现的程序进行需求分析，比如用什么数据结构存储数据，需要实现哪些基本的功能等。这次是通过数组模拟实现栈，所以是一个==静态栈==，但是我在栈满时通过arraycopy函数自动扩容，后面会细说。<br>我们要实现的功能至少应该包含以下功能：</p>
 <pre class=" language-javascript"><code class="language-javascript"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Stack</span> <span class="token punctuation">{</span>
