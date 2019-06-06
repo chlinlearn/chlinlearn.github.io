@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://chlinlearn.cn/"/>
-  <updated>2019-06-06T05:10:38.124Z</updated>
+  <updated>2019-06-06T05:47:39.829Z</updated>
   <id>https://chlinlearn.cn/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://chlinlearn.cn/java%E5%AD%A6%E4%B9%A0-%E5%9F%BA%E7%A1%80%E7%AF%8701-%E2%80%94%E6%95%B0%E7%BB%84%E6%A8%A1%E6%8B%9F%E5%AE%9E%E7%8E%B0%E6%A0%88.html"/>
     <id>https://chlinlearn.cn/java学习-基础篇01-—数组模拟实现栈.html</id>
     <published>2019-06-05T12:00:00.000Z</published>
-    <updated>2019-06-06T05:10:38.124Z</updated>
+    <updated>2019-06-06T05:47:39.829Z</updated>
     
     <summary type="html">
     
@@ -35,7 +35,7 @@
     
     </summary>
     
-      <category term="java,基础篇" scheme="https://chlinlearn.cn/categories/java-%E5%9F%BA%E7%A1%80%E7%AF%87/"/>
+      <category term="java" scheme="https://chlinlearn.cn/categories/java/"/>
     
     
       <category term="java" scheme="https://chlinlearn.cn/tags/java/"/>
