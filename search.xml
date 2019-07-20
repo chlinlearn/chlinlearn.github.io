@@ -13,6 +13,54 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[Java学习笔记(基础篇)—==与equals的区别]]></title>
+    <url>%2Fjava%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-%E2%80%94-%E4%B8%8Eequals%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
+    <content type="text"><![CDATA[java学习笔记(基础篇)—==与equals的区别[TOC] 1.java数据类型分为:​ 基本数据类型​ 引用数据类型 2.对于”==”​ 用于基本数据类型相互比较. 比较二者的值是否相等​ 用于引用数据类型相互比较. 比较二者地址是否相等​ 不能用于基本数据类型与引用型比较 3.对于”equals”:​ 不能用于基本数据类型比较(因为这是一个方法, 继承自object).​ 用于进行对象的比较, 比较二者的引用地址是否相同 4.特殊情况:​ 1)数值型基本类型和数值型类会存在自动装箱和自动拆箱​ 2)字符串会以常量形式存在, 如果多个字符串变量值相同, 他们指向同一个地址，String类重写了equals()方法，比较的是内容是否相等。​ 3)数值类型会存在类型自动转换 5.关于重写equals​ 1）判断该对象是否是其本身：this==obj ​ 2）判断该对象是否为空：obj==null ​ 3）判断该对象是否和其属于同一类型：obj instanceof * 或者 obj.getClass == .class ​ 4）逐一比较，如全相同则是相等 6.思考​ 如果是HashMap又要如何重写呢？如何判断里面存储的对象是否相等？ 参考HashSet的实现源码。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java学习笔记(基础篇)—java数组]]></title>
+    <url>%2Fjava%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-%E2%80%94java%E6%95%B0%E7%BB%84.html</url>
+    <content type="text"><![CDATA[java数组一：什么是数组，什么时候使用数组？ 数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。 在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本类型和引用类),但同一个数组里只能存放类型相同的元素。 二：什么时候用数组？ 保存一堆数据类型相同的数据的时候。 数据要求有顺序。 三：数组和链表的区别 在内存开辟难易程度上？ 数组内存分配必须是一块连续的内存空间。 链表内存分配不一定是连续的内存空间。 在项目中如何选择？项目重点在数据的增删改，选择链表。不需要数据的大量搬移 项目重点在数据的查询，选择数组，检索效率非常高。 四：创建数组大致包括如下步骤： 声明一个数组类型的引用变量，简称为数组变量； 用new语句构造数组的实例。new语句为数组分配内存，并且为数组中的每个元素赋予默认值； 初始化，即为数组的每个元素设置合适的初始值。 1. a)数组变量的声明； 1) 一个存放同一类型数据的集合 a. 即可以是基本类型，也可以是对象类型； b. 数组中的每个数据为元素； 2) 数组是一个对象，成员是数组长度和数组中的元素; 3) 申明了一个数组变量并不是创建了一个对象; 4) 申明数组的方式; int[] IArray 或者 int IArray[] 基本数据类型数组，数组中存放的是基本数据类型。 Teacher[] tArray 或者 Teacher tArray[]类数组， 数组中存放的是Teacher类创建的若干个的对象。 注意：1) 声明数组变量的时侯，不能指定数组的长度，以下声明方式是非法的。 int x[1]; int[2] x; b)初始化数组 初始化：自变量创建后首次赋值的过程； 创建数组对象；数组对象和其他Java对象一样，也用new语句创建； int[] iArray = new int[2]; new语句执行以下步骤： a. 在堆区中为数组分配内存空间，以上代码创建了一个包含2个元素的int数组； 每个元素都是int类型，占4个字节，因此整个数组对象在内存中占用8个字节。 b. 为数组中的每个元素赋予其数据类型的默认值。 byte/short/int/long 0 float 0.0f double 0.0d String null char '\u0000' boolean false c. 返回数组对象的引用 c)初始化数组对象； 数组中的每个元素都有一个索引，或者称为下标。 数组中的第一个元素的索引为0，第二个元素的索引为1, 依次类推。 通过索引可以访问数组中的元素或者给数组中元素内容赋值。 1) 声明、创建、初始化分开： int[] iArray; iArray = new int[2]; iArray[0] = 0; iArray[1] = 1; 2) 声明、创建的同时并初始化数组； int[] iArray = {0, 1}; Student sArray[] = new Student[] { new Student(“George”, “Male”, 20), new Student()}; Student[] stArray = { new Student(), new Student()} ; 注意：a. 非法的数组初始化方式： int[] x = new int[5]{5,4,3,2,1};//编译出错，不能在[]中指定数组的长度； int[] x; x = {5,4,3,2,1}; //{5,4,3,2,1}必须在声明数组变量的语句中使用，不能单独使用 五. 数组的边界： 一个数组的下标从0开始，数组通过数组的对象引用变量的下标访问数组。数组中第一个元素的索引为0, 第二元素的索引为1，依次类推。如果一个数组长度是5，要访问最后一个数组元素可以通过下标4来访问，如果通过下标5访问，超出了数组的边界，在运行时会抛出 ArrayIndexOutOfBoundsException。 通过调用数组的length方法可以获得一个数组的元素个数（数组长度）。 所有Java数组都有一个length属性，表示数组的长度. 该属性只能读取，但是不能修改。 六：二维数组 存放一维数组的数组 int[][] a = new int[2][3]; a[0].length; a.length; 七：System.arraycopy()​ 数组的长度一旦定义了，就无法修改。所以需要arraycopy()来重新分配一个新的 数组(扩容)，然后将其内容拷贝进去。 int[] a = new int[5]; int[] b = new int[5]; a=b与System.arraycopy(a,0,b,0,5)有什么区别？ /* * @param src the source array. * @param srcPos starting position in the source array. * @param dest the destination array. * @param destPos starting position in the destination data. * @param length the number of array elements to be copied. */ public static native void arraycopy(Object src, int srcPos,Object dest, int destPos,int length); 八：可变长参数 ... 参数的个数可变两个int相加? public int add(int a,int b){} 三个int相加? public int add(int a,int b,int c){} 四个int相加? public int add(int a,int b,int c,int d){} 五个int相加? public int add(int a,int b,int c,int d,int e){} .......... 上面的方案代码非常冗余。类似的代码重复写。 jdk1.5之前的解决方案：通过数组解决的 public int add(int[] a){ } add(new int[]{5,8,9}); add(new int[]{5,8}); 缺点:每次都要创建新的数组， 创建数组需要在堆区开辟连续的内存空间。 参数调用之后该变量就没用了，这样会 浪费内存空间。 jdk1.5之后的解决方案：通过...解决的 public int add(int... a){ } 调用: add(1,4); add(1,4,6); add(7,6,8,89,76); 注意:1)可变长参数的使用和数组的使用是一样。 2)一个方法中只能定义一个可变长参数,并且要定义最后一个参数。]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java学习笔记系列整理说明]]></title>
+    <url>%2Fjava%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B3%BB%E5%88%97%E6%95%B4%E7%90%86%E8%AF%B4%E6%98%8E.html</url>
+    <content type="text"><![CDATA[java学习笔记系列整理说明​ 陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一些网上博客我认为写的很好讲解的很清晰的知识点，我只是动手去收集整理和分享了这样一份学习笔记。 ​ 整理这样一份学习笔记，方便别人也方便自己日后的复习回顾，可以说一举双得。同时，当自己去想要发表一篇学习笔记的时候，也会去认真的思考表达是否准确，归纳整理的是否全面，亦或是有无错误的地方，经过这样一轮的思考，自己也加深了对知识的理解，这也是我去整理这样一系列学习笔记的目的之一，别把学过的知识藏在电脑硬盘，学过后就不再点开。 ​ 都说基础比天大，是你搭建大厦的基石，有基础的支撑相信去理解一些高大上的框架等也会更加容易。这样一系列的==java==基础学习笔记，正好可以经常拿来浏览阅读。 ​ 最后，读者们有自己好的文章也可以互相添加友链，互相学习。有疑问或者在转载的文章中有侵犯您的权益，请及时联系我删除。 ​ 联系方式：chlinlearn@gmail.com]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础篇</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Java学习笔记(基础篇)—变量与表达式]]></title>
+    <url>%2Fjava%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-%E2%80%94%E5%8F%98%E9%87%8F%E4%B8%8E%E8%A1%A8%E8%BE%BE%E5%BC%8F.html</url>
+    <content type="text"><![CDATA[java学习笔记(基础篇)—变量与表达式一：局部变量和实例变量 定义变量是指设定变量的数据类型和变量的名字，Java语言要求变量遵循先定义，再初始化，然后使用的规则。 作用域：指它的存在范围，只有在这个范围内，程序代码才能访问它。变量的生命周期是指从一个变量被创建并分配内存空间开始，到这个变量被销毁并清除其所占用内存空间的过程。 局部变量(参数变量也可以看成是局部变量)： 1)位置：定义在方法中或者在方法中的{} 2)使用：先赋值后使用 3)作用域：定义的方法中或者定义的{}中 4)生命周期：从变量的定义到方法调用结束 局部变量的例子：public void method1() { int a = 0; //局部变量，作用域为整个method01方法； { int b = 0; //局部变量，作用域为所处的代码块； b = a; } b = 20; //编译出错，b不能被访问； } 实例变量： 1)位置：定义方法外，类里面 2)使用：系统会进行默认初始化 3)作用域：作用于整个类 4)生命周期：从对象创建的时候到gc回收内存结束 实例变量的例子： class Test { private int n1=0; private int n2=0; public int add() { int result = n2 + n2; return result; } } 二：操作符: 操作符能与相应类型的数据组成表达式，来完成相应的运算。 a)数学运算操作符+数据类型值相加或字符串连接;System.out.println(1+2+"a"); //输出3a System.out.println(1+2.0+"a"); //输出3.0a System.out.println(1+2.0+"a"+true); //输出3.0atrue System.out.println("a"+1+2); //输出a12 System.out.println(1+"a"+2); //输出1a2 /整除, 如操作数均为整数，运算结果为商的整数部分int a1=12/5; //a1变量的取值为2 int a2=13/5; //a2变量的取值为2 int a3=-12/5; //a3变量的取值为-2 int a4=-13/5; //a4变量的取值为-2 int a5=1/5; //a5变量的取值为0 double a6=-12/5; //a6变量的取值为-2.0 double a7=-12/5.0; //a7变量的取值为-2.4 %取模操作符, 如操作数均为整数，运算结果为商的整数部分int a1=1%5; //a1变量的取值为1 int a2=13%5; //a2变量的取值为3 double a3=1%5; //a3变量的取值为1.0 double a4=12%5.1; //a4变量的取值为1.8000000000000007 /整除, 如操作数均为整数，运算结果为商的整数部分 int a1=12/5; //a1变量的取值为2 int a2=13/5; //a2变量的取值为2 int a3=-12/5; //a3变量的取值为-2 int a4=-13/5; //a4变量的取值为-2 int a5=1/5; //a5变量的取值为0 double a6=-12/5; //a6变量的取值为-2.0 double a7=-12/5.0; //a7变量的取值为-2.4 %取模操作符, 如操作数均为整数，运算结果为商的整数部分int a1=1%5; //a1变量的取值为1 int a2=13%5; //a2变量的取值为3 double a3=1%5; //a3变量的取值为1.0 double a4=12%5.1; //a4变量的取值为1.8000000000000007 b) 赋值操作符： = : int x=0,i=1,j=1; *=: 这里的"*="由操作符"*"和"="复合而成，它等价于 a=a*b,这种 复合操作符能使程序变得更加简洁。 /=: a/=b 等价于 a=a/b; %=: a%=b 等价于 a=a%b; 注意：+=和+的区别 如:short a=0; int b=123456; a+=b;和a=a+b;的区别: +=系统会进行隐式的数据类型转换，向=左边的数据类型进行转换。 a+b会向数据类型高的类型转换 c) 比较操作符 >大于 >= 大于等于 &lt; 小于 &lt;= 小于等于 以上操作符只适用于整数类型和浮点数类型； int a=1,b=1; double d=1.0; boolean result1 = a>b; //result1的值为false; boolean result2 = a&lt;b; //result2的值为false; boolean result3 = a>=d; //result3的值为true; boolean result4 = a&lt;=b; //result4的值为true; instanceof:判断一个引用类型所引用的对象是否是一个类的实例。该操作符左边是一个对象，右边是一个类名或接口名。形式如下： 如：String str="hello" System.out.println(str instanceof String); System.out.println(str instanceof Object); System.out.println(str instanceof Student); //false java.lang.Object是所有类的父类， 每一个类都会默认继承Object 子类是一个父类 是is a的关系 d)相等操作符== 等于!= 不等于既可以是基本类型，也可以是引用类型：基本数据类型比较是真正的数值引用类型比较的是地址，如果要比较引用类型真正的数据使用equals 如：int a=1,b=1; System.out.println(a==b); //输出true; 如：String s1="hello"; String s2="hello"; String s3=new String("hello"); String s4=new String("hello"); System.out.println(s1==s2); //true System.out.println(s3==s4); //false System.out.println(s1==s3); //false System.out.println(s3.equals(s4)); //true e) 移位操作符，针对二进制操作算术右移位运算，也称做带符号右移位运算。最高为补符号位。 > 逻辑右移位运算，也称为不带符号右移位运算。 > &lt;&lt; 左移位运算，也称为不带符号左移位运算。 f) 位运算操作符&amp;: 与运算，运算规则为：1&amp;1->1, 1&amp;0->0, 0&amp;1->0, 0&amp;0->0; |: 或运算，运算规则为：1|1->1, 1|0->1, 0|1->1, 0|0->0; ^: 异或运算，运算规则为：1^1->0, 1^0->1, 0^1->1, 0^0->0; 两个值相同为0,不同为1； ~ : 取反运算, ~1->0, ~0->1; 例如：8>>2====>8/2^2=2 8:0000...00001000 0000.........10 ====>2 8>>>3=====>8/2^3=1 8:0000...00001000 00000000.000001=====>1 8&lt;&lt;2======>8*2^2=32 8:0000...00001000 000000000100000======>32 1&amp;1=1 1&amp;0=0 0&amp;0=0 1|1=1 1|0=1 0|0=0 1^1=0 1^0=1 0^0=0 ~1=0 ~0=1 8&amp;2=0 8|2=10 8^2=10 ~8= ~2= 1010 10===>第三位置1===>14 10===>第二位清0===>8 10===>第一位置反===>11 10===>输出相应的二进制 f) 逻辑操作符短路操作符: 如果能根据操作左边的布尔表达式就能推算出整个表达式的布尔值，将不执行操作符右边的布尔表达式； &amp;&amp;:左边的布尔表达式的值为false, 整个表达式值肯定为false, 此时会忽略执行右边的布尔表达式。 ||:左边的布尔表达式的值为true, 整个表达式值肯定为true, 此时会忽略执行右边的布尔表达式。 if(条件1&amp;&amp;条件2){} if条件1为假，不会执行条件2 if条件1为真，会执行条件2 if(条件1||条件2){} if条件1为真，不会执行条件2 if条件1为假，会执行条件2 g) 条件操作符布尔表达式 ? 表达式1 : 表达式2 如果布尔表达式的值为true,就返回表达式1的值,否则返回表达式2的值。 int score = 61; String result = score>=60?"及格":"不及格"; h)++,-- 前++与后++ 前--与后-- int a=10; b=++a =====>a=11,b=11,先计算，后赋值 b=a++ =====>a=11,b=10，先赋值，后计算 System.out.println("a:"+a+" b:"+b); 三.数据类型的转换1）基本数据类型转换隐式的数据类型转换：精度小的数据给精度大的数据 强制（显式）的数据类型转换：(type)精度大的数据给精度小的数据 System.out.println((int)(char)(byte)-1); 数据类型在转换的时候注意： a)如果将精度小的数据转为精度大的数据时。 如果转之前是有符号数，在前面补符号位 如果转之前是无符号数，在前面补0 b)如果将精度大的数据转为精度小的数据时。 从低位窃取位数 2）引用数据类型转换隐式的数据类型转换：子类转换父类 强制（显式）的数据类型转换：父类转换子类 String str="hello"; Object o=str; String str2=(String)o;]]></content>
+      <categories>
+        <category>java</category>
+      </categories>
+      <tags>
+        <tag>java</tag>
+        <tag>基础篇</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Java学习笔记(基础篇)—抽象与接口的区别]]></title>
     <url>%2Fjava%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E5%9F%BA%E7%A1%80%E7%AF%87-%E2%80%94%E6%8A%BD%E8%B1%A1%E4%B8%8E%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%8C%BA%E5%88%AB.html</url>
     <content type="text"><![CDATA[抽象与接口的区别一、抽象(abstract) 1. 抽象方法 1) 作用：定义规范 2) 抽象方法用来描述具有什么功能，但不提供实现。 3) 如果类中一个方法没有实现就要定义一个抽象方法。 2. 抽象类 1）如果类中有抽象方法，该类就必须定义为抽象类。 2）抽象类中不一定有抽象方法，可以包含普通方法、实例变量、构造器；但没有抽象构造器和抽象静态方法。 3）抽象类失去了创建对象的能力，只能提供给子类继承。 4）继承抽象类必须实现其所有的抽象方法，或者子类也定义为抽象类。 5）抽象类和抽象方法不能被final修饰。 二、接口(interface) 1. 接口 1）作用：定义规范，解决多继承问题。 多继承的不足之处：造成代码浪费，引发继承的多义性（即多个父类中可能含有几个命名相同的方法或属性，调用时就不知道使用的是来自哪里） 2）接口是抽象类的抽象，接口的方法都是抽象方法，默认都是public abstract类型。 3）接口的成员变量默认都是常量，被public final static 修饰。 4）接口没有构造器，不能被实例化。 5）接口可以继承多个接口，一个类也可以实现多个接口，达到解决多继承的目的。]]></content>

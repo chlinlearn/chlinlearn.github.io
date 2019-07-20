@@ -4,9 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记(基础篇)—抽象与接口的区别, chlinlearn">
-    <meta name="description" content="抽象与接口的区别一、抽象(abstract) 1. 抽象方法 1) 作用：定义规范 2) 抽象方法用来描述具有什么功能，但不提供实现。 3) 如果类中一个方法没有实现就要定义一个抽象方法。
- 2. 抽象类 1）如果类中有抽象方法，该类就必须">
+    <meta name="keywords" content="Java学习笔记(基础篇)—==与equals的区别, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—==与equals的区别[TOC]
+1.java数据类型分为:​    基本数据类型​    引用数据类型 
+2.对于”==”​        用于基本数据类型相互比较. 比较二者的值是否相等​        用">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -14,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记(基础篇)—抽象与接口的区别 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—==与equals的区别 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -284,13 +285,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记(基础篇)—抽象与接口的区别
+                        Java学习笔记(基础篇)—==与equals的区别
                     </div>
                 </div>
             </div>
@@ -410,14 +411,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-06-17
+                    2019-07-20
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        379
+                        346
                     </div>
                     
 
@@ -440,13 +441,17 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="抽象与接口的区别"><a href="#抽象与接口的区别" class="headerlink" title="抽象与接口的区别"></a>抽象与接口的区别</h2><h3 id="一、抽象-abstract"><a href="#一、抽象-abstract" class="headerlink" title="一、抽象(abstract)"></a>一、抽象(abstract)</h3><p> <strong>1. 抽象方法</strong><br> 1) 作用：定义规范<br> 2) 抽象方法用来描述具有什么功能，但不提供实现。<br> 3) 如果类中一个方法没有实现就要定义一个抽象方法。</p>
-<p> <strong>2. 抽象类</strong><br> 1）如果类中有抽象方法，该类就必须定义为抽象类。<br> 2）抽象类中不一定有抽象方法，可以包含普通方法、实例变量、构造器；但没有抽象构造器和抽象静态方法。<br> 3）抽象类失去了创建对象的能力，只能提供给子类继承。<br> 4）继承抽象类必须实现其所有的抽象方法，或者子类也定义为抽象类。<br> 5）抽象类和抽象方法不能被final修饰。</p>
-<h3 id="二、接口-interface"><a href="#二、接口-interface" class="headerlink" title="二、接口(interface)"></a>二、接口(interface)</h3><p> <strong>1. 接口</strong><br> 1）作用：定义规范，解决多继承问题。</p>
-<blockquote>
-<p>多继承的不足之处：造成代码浪费，引发继承的多义性（即多个父类中可能含有几个命名相同的方法或属性，调用时就不知道使用的是来自哪里）</p>
-</blockquote>
-<p> 2）接口是抽象类的抽象，接口的方法都是抽象方法，默认都是public abstract类型。<br> 3）接口的成员变量默认都是常量，被public final static 修饰。<br> 4）接口没有构造器，不能被实例化。<br> 5）接口可以继承多个接口，一个类也可以实现多个接口，达到解决多继承的目的。</p>
+                <h1 id="java学习笔记-基础篇-—-与equals的区别"><a href="#java学习笔记-基础篇-—-与equals的区别" class="headerlink" title="java学习笔记(基础篇)—==与equals的区别"></a>java学习笔记(基础篇)—==与equals的区别</h1><p>[TOC]</p>
+<h2 id="1-java数据类型分为"><a href="#1-java数据类型分为" class="headerlink" title="1.java数据类型分为:"></a>1.java数据类型分为:</h2><p>​    基本数据类型<br>​    引用数据类型 </p>
+<h2 id="2-对于”-”"><a href="#2-对于”-”" class="headerlink" title="2.对于”==”"></a>2.对于”==”</h2><p>​        用于基本数据类型相互比较. 比较二者的值是否相等<br>​        用于引用数据类型相互比较. 比较二者地址是否相等<br>​        不能用于基本数据类型与引用型比较</p>
+<h2 id="3-对于”equals”"><a href="#3-对于”equals”" class="headerlink" title="3.对于”equals”:"></a>3.对于”equals”:</h2><p>​        不能用于基本数据类型比较(因为这是一个方法, 继承自object).<br>​        用于进行对象的比较, 比较二者的引用地址是否相同</p>
+<h2 id="4-特殊情况"><a href="#4-特殊情况" class="headerlink" title="4.特殊情况:"></a>4.特殊情况:</h2><p>​        1)数值型基本类型和数值型类会存在自动装箱和自动拆箱<br>​        2)字符串会以常量形式存在, 如果多个字符串变量值相同, 他们指向同一个地址，String类重写了equals()方法，比较的是内容是否相等。<br>​        3)数值类型会存在类型自动转换</p>
+<h2 id="5-关于重写equals"><a href="#5-关于重写equals" class="headerlink" title="5.关于重写equals"></a>5.关于重写equals</h2><p>​            1）判断该对象是否是其本身：this==obj</p>
+<p>​            2）判断该对象是否为空：obj==null</p>
+<p>​            3）判断该对象是否和其属于同一类型：obj   instanceof   *<em>  或者  obj.getClass == </em>.class</p>
+<p>​            4）逐一比较，如全相同则是相等</p>
+<h2 id="6-思考"><a href="#6-思考" class="headerlink" title="6.思考"></a>6.思考</h2><p>​            如果是HashMap又要如何重写呢？如何判断里面存储的对象是否相等？</p>
+<p>参考HashSet的实现源码。</p>
 
             </div>
             <hr>
@@ -587,7 +592,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记-基础篇-—抽象与接口的区别.html" class="b-link-green">Java学习笔记(基础篇)—抽象与接口的区别</a>
+                    <a href="/java学习笔记-基础篇-—-与equals的区别.html" class="b-link-green">Java学习笔记(基础篇)—==与equals的区别</a>
                 </p>
             </div>
         </div>
@@ -612,20 +617,21 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—变量与表达式.html">
+                <a href="/java学习笔记-基础篇-—java关键字与数据类型.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—变量与表达式">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java关键字与数据类型">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—变量与表达式</span>
+                        <span class="card-title">Java学习笔记(基础篇)—java关键字与数据类型</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java学习笔记(基础篇)—变量与表达式一：局部变量和实例变量
-定义变量是指设定变量的数据类型和变量的名字，Java语言要求变量遵循先定义，再初始化，然后使用的规则。
-
-作用域：指它的存在范围，只有在这个范围内，程序代码才能访问它。变量的生</div>
+                    <div class="summary">java关键字与数据类型
+Java语言的关键字是程序代码中的特殊字符。包括：
+. 类和接口的声明——class, extends, implements, interface
+. 包引入和包声明——import, package
+. 数据类</div>
                     <div class="publish-info">
                         <span class="publish-date">
                             <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
@@ -664,26 +670,22 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—数组模拟实现栈.html">
+                <a href="/java学习笔记-基础篇-—java数组.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—数组模拟实现栈">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java数组">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—数组模拟实现栈</span>
+                        <span class="card-title">Java学习笔记(基础篇)—java数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">栈的概念
-先进后出策略(LIFO)
-是一种基本数据结构
-栈的分类有两种：1.静态栈（数组实现） 2.动态栈（链表实现）
-栈的模型图如下：
-
-需求分析在编写代码之前，我习惯先对要实现的程序进行需求分析，比如用什么数据结构存储数据，需要实现哪些</div>
+                    <div class="summary">java数组一：什么是数组，什么时候使用数组？
+数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。
+在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-06-05
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
                             </span>
                         <span class="publish-author">
                             
