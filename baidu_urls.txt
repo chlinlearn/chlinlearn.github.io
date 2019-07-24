@@ -1,1 +1,1 @@
-https://chlinlearn.cn/java学习笔记-基础篇-—java关键字与数据类型.html
+https://chlinlearn.cn/java学习笔记-基础篇-—内部类.html

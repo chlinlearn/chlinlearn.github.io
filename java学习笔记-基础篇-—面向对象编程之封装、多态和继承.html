@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记系列整理说明, chlinlearn">
-    <meta name="description" content="java学习笔记系列整理说明​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一">
+    <meta name="keywords" content="Java学习笔记(基础篇)—面向对象编程之封装、多态和继承, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—面向对象编程之封装、多态和继承一. OOP中的基本概念Java的编程语言是面向对象的，采用这种语言进行编程称为面向对象编程(Object-Oriented Programming, OOP)， 它允许设计者将面向">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记系列整理说明 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—面向对象编程之封装、多态和继承 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +283,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记系列整理说明
+                        Java学习笔记(基础篇)—面向对象编程之封装、多态和继承
                     </div>
                 </div>
             </div>
@@ -409,21 +409,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2019-07-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        414
+                        2.4k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        8 分
                     </div>
                     
                 
@@ -439,11 +439,61 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java学习笔记系列整理说明"><a href="#java学习笔记系列整理说明" class="headerlink" title="java学习笔记系列整理说明"></a>java学习笔记系列整理说明</h1><p>​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一些网上博客我认为写的很好讲解的很清晰的知识点，我只是动手去收集整理和分享了这样一份学习笔记。</p>
-<p>​        整理这样一份学习笔记，方便别人也方便自己日后的复习回顾，可以说一举双得。同时，当自己去想要发表一篇学习笔记的时候，也会去认真的思考表达是否准确，归纳整理的是否全面，亦或是有无错误的地方，经过这样一轮的思考，自己也加深了对知识的理解，这也是我去整理这样一系列学习笔记的目的之一，别把学过的知识藏在电脑硬盘，学过后就不再点开。</p>
-<p>​        都说基础比天大，是你搭建大厦的基石，有基础的支撑相信去理解一些高大上的框架等也会更加容易。这样一系列的==java==基础学习笔记，正好可以经常拿来浏览阅读。</p>
-<p>​        最后，读者们有自己好的文章也可以互相添加友链，互相学习。有疑问或者在转载的文章中有侵犯您的权益，请及时联系我删除。</p>
-<p>​        联系方式：<a href="mailto:chlinlearn@gmail.com" target="_blank" rel="noopener">chlinlearn@gmail.com</a></p>
+                <h1 id="java学习笔记-基础篇-—面向对象编程之封装、多态和继承"><a href="#java学习笔记-基础篇-—面向对象编程之封装、多态和继承" class="headerlink" title="java学习笔记(基础篇)—面向对象编程之封装、多态和继承"></a>java学习笔记(基础篇)—面向对象编程之封装、多态和继承</h1><h2 id="一-OOP中的基本概念"><a href="#一-OOP中的基本概念" class="headerlink" title="一. OOP中的基本概念"></a>一. OOP中的基本概念</h2><p>Java的编程语言是面向对象的，采用这种语言进行编程称为面向对象编程(Object-Oriented Programming, OOP)， 它允许设计者将面向对象设计实现为一个可运行的系统。Java的编程单位是类，对象最后要通过类进行实例化(即“创建”)。面向对象编程有三个特性：封装，继承，多态</p>
+<pre class=" language-java"><code class="language-java">封装：对类中的属性和方法的具体实现进行封装（隐藏），外界不可见
+继承：继承父类中的属性和方法 <span class="token keyword">extends</span>
+      <span class="token class-name">class</span> 子类 <span class="token keyword">extends</span> 父类
+      都是单继承
+多态：同一个领域中<span class="token punctuation">(</span>继承同一个类或者实现同一个接口<span class="token punctuation">)</span>的不同对象调用相同的方      法表现不同。
+</code></pre>
+<h2 id="二-封装"><a href="#二-封装" class="headerlink" title="二. 封装"></a>二. 封装</h2><h3 id="1-类和对象"><a href="#1-类和对象" class="headerlink" title="1.类和对象"></a>1.类和对象</h3><p>类是具有相同属性和行为的对象的集合。对象是类的具体化，对象是唯一的。类是具有一组相同属性和行为的抽象化模板，类是对象的抽象。</p>
+<h4 id="对象是对问题领域中事件的抽象。对象具有以下特性："><a href="#对象是对问题领域中事件的抽象。对象具有以下特性：" class="headerlink" title="对象是对问题领域中事件的抽象。对象具有以下特性："></a>对象是对问题领域中事件的抽象。对象具有以下特性：</h4><p>1) 万物皆为对象。问题领域中的实体和概念都可以抽象为对象。例如学生，成绩单、教师、课和教室。<br>2) 每个对象都是惟一的。<br>3) 对象具有属性和行为。<br>4) 对象具有状态。状态是指某个瞬间对象的各个属性的取值。对象的某些行为会改变对象自身的状态，即属性的取值。</p>
+<p>5) 每个对象都是某个类的实例。小张和小王都属于学生类、中国和美国都属于国家类、中文和英文都属于语言类。<br>同一个类的所有实例都有相同属性，但属性取值不一事实上相同，但是它们的状态不一定相同。<br>例如：小张和小王都属于学生类，都有姓名、性别、年龄、身高和体重这些属性，但是他们的属性取值不同。同一个类的所有实例都有相同行为，意味着它们具有一些相同的功能。</p>
+<h4 id="类是一组具有相同属性和行为对象的模板。面向对象编程的主要任务就是定义对象模型中的各个类："><a href="#类是一组具有相同属性和行为对象的模板。面向对象编程的主要任务就是定义对象模型中的各个类：" class="headerlink" title="类是一组具有相同属性和行为对象的模板。面向对象编程的主要任务就是定义对象模型中的各个类："></a>类是一组具有相同属性和行为对象的模板。面向对象编程的主要任务就是定义对象模型中的各个类：</h4><p>1) 类是一种类型：是引用类型；<br>2) 类是元数据：描述数据的数据，数据在面向对象领域里以对象的形式存在，类是对象共有属性和方法的抽象描述。</p>
+<h3 id="2-定义方法形式"><a href="#2-定义方法形式" class="headerlink" title="2. 定义方法形式"></a>2. 定义方法形式</h3><p>格式： 修饰符  返回类型 方法名（参数列表）异常抛出类型{方法体}</p>
+<p>参数列表：传入数据<br>返回值类型：传出数据的类型没有返回值，必须写void<br>修饰符：访问修饰符public,private或者static,final。没有优先级</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">getValue</span><span class="token punctuation">(</span><span class="token keyword">int</span> value<span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>value<span class="token operator">></span><span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">return</span> value<span class="token operator">+</span><span class="token number">10</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h3 id="2-参数传递：实参传递给形参"><a href="#2-参数传递：实参传递给形参" class="headerlink" title="2. 参数传递：实参传递给形参"></a>2. 参数传递：实参传递给形参</h3><p>   形参：方法声明时的参数<br>   实参：方法调用时传递的参数<br>1）值传递：传递的是数值<br>          参数是基本数据类型的时候，采用值传递<br>2）地址传递：传递的是地址<br>          参数是引用数据类型的时候，采用地址传递</p>
+<h3 id="3-this关键字-当前对象"><a href="#3-this关键字-当前对象" class="headerlink" title="3. this关键字: 当前对象"></a>3. this关键字: 当前对象</h3><p>​    1)区分实例变量和局部变量<br>​    this.name=name;<br>​    2)调用本类的构造器<br>​       this(参数列表);<br>​    3)调用本类的方法<br>​       this.方法名()</p>
+<h3 id="4-数据隐藏"><a href="#4-数据隐藏" class="headerlink" title="4. 数据隐藏"></a>4. 数据隐藏</h3><p>  好处：防止外界进行非法修改<br>  如何实现：1)数据的访问修饰符private<br>                       2)提供统一的操作(属性的set,get)<br>  数据隐藏就是封装的一个方面，封装的另一个方面隐藏方法。</p>
+<h3 id="5-方法重载"><a href="#5-方法重载" class="headerlink" title="5. 方法重载"></a>5. 方法重载</h3><p>对于类的方法(包括从父类中继承的方法), 如果有两个方法的方法名相同，但参数不一致，那么可以说，一个方法是另一个方法的重载方法。这种现象叫重载。<br>方法的重载满足的条件：<br>   1)在同一个类中<br>   2)方法名相同<br>   3)参数列表不相同<br>        a)参数个数不相同 ||<br>        b)参数类型不相同 ||<br>        c)参数列表的顺序不相同<br>   4)返回值类型可以不同<br>   5)访问修饰符可以不同</p>
+<p>注意：在一个类中不允许定义两个方法名相同，并且参数签名也完全相同的方法。因为假如存在这样的两个方法，Java虚拟机在运行时就无法决定到底执行哪个方法。参数签名是指参数的类型、个数和顺序。</p>
+<h3 id="6-创建和初始化对象-new"><a href="#6-创建和初始化对象-new" class="headerlink" title="6. 创建和初始化对象(new)"></a>6. 创建和初始化对象(new)</h3><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String name<span class="token operator">=</span><span class="token string">"briup"</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>Person p=new Person();  </p>
+<p>1)在栈区开辟空间保存对象的引用<br>2)在堆区开辟空间保存对象本身的数据<br>3)堆区的地址赋值给栈区的对象的引用<br>4)为对象的属性进行默认初始化(系统完成)<br>5)为对象的属性进行显示初始化<br>6)调用普通代码块{}<br>7)调用构造器</p>
+<h3 id="7-构造方法"><a href="#7-构造方法" class="headerlink" title="7. 构造方法"></a>7. 构造方法</h3><p>构造器：根据用户需求传入数据, 然后根据传入数据对属性进行初始化。<br>作用：为属性进行初始化<br>    1）方法名和类名相同<br>    2）没有返回值类型<br>    3）构造的重载(根据不同的情况调用不同的构造器进行相应的初始化)调用本类的          构造器:this(参数列表)，必须放在方法的第一行。<br>    4)系统会提供一个无参的构造器，<br> 但是如果本类实现了其他的构造器，系统提供的无参构造器失效。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Test</span><span class="token punctuation">{</span>
+  <span class="token keyword">public</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span>
+  <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">Test</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token comment" spellcheck="true">//普通的方法</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="二：继承"><a href="#二：继承" class="headerlink" title="二：继承"></a>二：继承</h2><p>好处：代码复用，简化编程</p>
+<h4 id="代码复用用在哪些地方："><a href="#代码复用用在哪些地方：" class="headerlink" title="代码复用用在哪些地方："></a>代码复用用在哪些地方：</h4><p>   1)复用父类的属性<br>   2)复用父类的方法(直接调用父类的方法)<br>   3)重写父类的方法<br>实现：class 子类 extends 父类</p>
+<pre class=" language-java"><code class="language-java">java是单继承，但也不是绝对的单继承，java中有接口，一个接口可以继承多个接口，一个类也可以实现多个接口，具体的内容会在接口那篇文章中说明。
+</code></pre>
+<p>关系：子类 is a 父类  或者 子类 is a like 父类</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span>
+      student is a Person
+      Person is a Student（error）
+</code></pre>
+<h4 id="子类继承父类哪些："><a href="#子类继承父类哪些：" class="headerlink" title="子类继承父类哪些："></a>子类继承父类哪些：</h4><p>1）构造器不能继承</p>
+<p>2）方法和属性全部继承，private声明的可以继承，但子类不能使用，只有父类本身才能使用。</p>
+<h4 id="继承注意的问题："><a href="#继承注意的问题：" class="headerlink" title="继承注意的问题："></a>继承注意的问题：</h4><p>1)创建一个子类对象必须先创建一个父类对象<br>2)子类的构造器会默认调用父类的无参构造器super();<br>3)父类的无参构造器失效，子类构造器就需要显式的调用父类存在的其他构造器super(参数列表);<br>4)当一个子类继承了一个父类后，父类中所有的字段和方法都被子类继承拥有，<br>子类可以任意的支配使用，每个子类对象中都拥有了父类中的所有字段。当构造一个子类的实例对象时，该对象的实例变量包括了子类本身以及父类中的所有实例变量，实例方法也包括了子类和父类中的所有实例方法。子类构造器用来初始化子类中所有的实例变量，而父类构造器super(实参)用来初始化父类中所有的实例变量。那么在堆中为子类实例对象分配的内存区域中包括了子类和父类中所有初始化后的实例变量。<br>5)在构造器不能同时出现this和super，并且this和super只能出现在构造器的第一行，否则会报错。</p>
+<h3 id="1-super代表父类对象，this代表当前对象"><a href="#1-super代表父类对象，this代表当前对象" class="headerlink" title="1. super代表父类对象，this代表当前对象"></a>1. super代表父类对象，this代表当前对象</h3><p> 1) 调用父类的属性(很少用)，因为都是私有的，不能调用<br>     super.name=name;<br> 2) 调用父类的构造器<br>    super(参数列表);<br> 3) 调用父类的方法(子类中包含和父类相同的方法名)<br>    super.方法名(参数列表);</p>
+<h3 id="2-方法的重写"><a href="#2-方法的重写" class="headerlink" title="2. 方法的重写"></a>2. 方法的重写</h3><p>  条件：当父类的方法不能够满足子类方法的需求。<br>        就可以对父类的方法进行重写<br>   1)发生在子父类<br>   2)方法名必须相同 &amp;&amp;<br>     参数列表必须相同 &amp;&amp;<br>     返回值类型必须相同<br>  3)可见性(访问修饰符)不能变小<br>  4)异常不能扩大<br> 加上@Override让编译器来检查是否是一个重写方法</p>
+<h2 id="三：多态"><a href="#三：多态" class="headerlink" title="三：多态"></a>三：多态</h2><p>概念：同一领域中的不同对象调用相同的方法表现不一样。</p>
+<p>静态数据类型：变量申明时候的类型，编译时<br>动态数据类型：创建对象时的数据类型，运行时<br>对象真正的数据类型是动态数据类型决定的，运行时数据类型</p>
+<p>实现多态必须满足什么条件：<br>    1)子类必须重写父类中的方法<br>    2)父类的引用指向子类的对象:    父类  变量 = new  子类();</p>
+<pre class=" language-java"><code class="language-java">Person p<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
 
             </div>
             <hr>
@@ -584,7 +634,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记系列整理说明.html" class="b-link-green">Java学习笔记系列整理说明</a>
+                    <a href="/java学习笔记-基础篇-—面向对象编程之封装、多态和继承.html" class="b-link-green">Java学习笔记(基础篇)—面向对象编程之封装、多态和继承</a>
                 </p>
             </div>
         </div>
@@ -609,24 +659,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java关键字与数据类型.html">
+                <a href="/java学习笔记-基础篇-—内部类.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java关键字与数据类型">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—内部类">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java关键字与数据类型</span>
+                        <span class="card-title">Java学习笔记(基础篇)—内部类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java关键字与数据类型
-Java语言的关键字是程序代码中的特殊字符。包括：
-. 类和接口的声明——class, extends, implements, interface
-. 包引入和包声明——import, package
-. 数据类</div>
+                    <div class="summary">java学习笔记(基础篇)—内部类一、内部类1.顶层类和内部类的区别：  1)位置:  内部类是定义一个类的里面或者一个方法中,或者一个表达式中。  顶层类是定义在package下  2)修饰符：顶层类只能处于public和默认访问级别， </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
                         </span>
                         <span class="publish-author">
                             
@@ -662,22 +708,20 @@ Java语言的关键字是程序代码中的特殊字符。包括：
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java数组.html">
+                <a href="/java学习笔记-基础篇-—集合.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java数组">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—集合">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java数组</span>
+                        <span class="card-title">Java学习笔记(基础篇)—集合</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java数组一：什么是数组，什么时候使用数组？
-数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。
-在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本</div>
+                    <div class="summary">java学习笔记(基础篇)—集合一、集合框架的组成，在java.util包中。  1)接口：定义需要实现的抽象方法。  2)实现类：将接口中的方法实现，如ArrayList,Hashtable等  3)算法：存放和操作数据的算法。如哈希算法</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
                             </span>
                         <span class="publish-author">
                             

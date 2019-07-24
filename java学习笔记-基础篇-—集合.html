@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记系列整理说明, chlinlearn">
-    <meta name="description" content="java学习笔记系列整理说明​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一">
+    <meta name="keywords" content="Java学习笔记(基础篇)—集合, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—集合一、集合框架的组成，在java.util包中。  1)接口：定义需要实现的抽象方法。  2)实现类：将接口中的方法实现，如ArrayList,Hashtable等  3)算法：存放和操作数据的算法。如哈希算法">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记系列整理说明 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—集合 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +283,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记系列整理说明
+                        Java学习笔记(基础篇)—集合
                     </div>
                 </div>
             </div>
@@ -409,21 +409,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2019-07-22
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        414
+                        1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        3 分
                     </div>
                     
                 
@@ -439,11 +439,57 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java学习笔记系列整理说明"><a href="#java学习笔记系列整理说明" class="headerlink" title="java学习笔记系列整理说明"></a>java学习笔记系列整理说明</h1><p>​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一些网上博客我认为写的很好讲解的很清晰的知识点，我只是动手去收集整理和分享了这样一份学习笔记。</p>
-<p>​        整理这样一份学习笔记，方便别人也方便自己日后的复习回顾，可以说一举双得。同时，当自己去想要发表一篇学习笔记的时候，也会去认真的思考表达是否准确，归纳整理的是否全面，亦或是有无错误的地方，经过这样一轮的思考，自己也加深了对知识的理解，这也是我去整理这样一系列学习笔记的目的之一，别把学过的知识藏在电脑硬盘，学过后就不再点开。</p>
-<p>​        都说基础比天大，是你搭建大厦的基石，有基础的支撑相信去理解一些高大上的框架等也会更加容易。这样一系列的==java==基础学习笔记，正好可以经常拿来浏览阅读。</p>
-<p>​        最后，读者们有自己好的文章也可以互相添加友链，互相学习。有疑问或者在转载的文章中有侵犯您的权益，请及时联系我删除。</p>
-<p>​        联系方式：<a href="mailto:chlinlearn@gmail.com" target="_blank" rel="noopener">chlinlearn@gmail.com</a></p>
+                <h1 id="java学习笔记-基础篇-—集合"><a href="#java学习笔记-基础篇-—集合" class="headerlink" title="java学习笔记(基础篇)—集合"></a>java学习笔记(基础篇)—集合</h1><h2 id="一、集合框架的组成，在java-util包中。"><a href="#一、集合框架的组成，在java-util包中。" class="headerlink" title="一、集合框架的组成，在java.util包中。"></a>一、集合框架的组成，在java.util包中。</h2><p>  1)接口：定义需要实现的抽象方法。<br>  2)实现类：将接口中的方法实现，如ArrayList,Hashtable等<br>  3)算法：存放和操作数据的算法。如哈希算法，红黑树算法…</p>
+<pre class=" language-java"><code class="language-java"><span class="token function">Collection</span><span class="token punctuation">(</span>顶层接口<span class="token punctuation">)</span>
+  <span class="token operator">-</span><span class="token function">List</span><span class="token punctuation">(</span>接口<span class="token punctuation">)</span>
+    <span class="token operator">-</span>ArrayList
+    <span class="token operator">-</span>Vector
+    <span class="token operator">-</span>LinkedList
+  <span class="token operator">-</span><span class="token function">Set</span><span class="token punctuation">(</span>接口<span class="token punctuation">)</span>
+    <span class="token operator">-</span>HashSet
+    <span class="token operator">-</span><span class="token function">SortSet</span><span class="token punctuation">(</span>接口<span class="token punctuation">)</span>
+      <span class="token operator">-</span>TreeSet
+  <span class="token operator">-</span><span class="token function">Map</span><span class="token punctuation">(</span>接口<span class="token punctuation">)</span>
+    <span class="token operator">-</span>HashMap
+    <span class="token operator">-</span>TreeMap
+    <span class="token operator">-</span>Treetable
+    <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+</code></pre>
+<h2 id="二、集合的层次结构"><a href="#二、集合的层次结构" class="headerlink" title="二、集合的层次结构"></a>二、集合的层次结构</h2><p>a)：保存单值<br>Collection:定义保存单值的规范<br>   ——Set:定义保存不可重复无序单值的规范<br>       ———HashSet:哈希算法保存数据，检索效率最高的<br>       ———SortedSet：定义在Set基础上进行排序的规范<br>              ———TreeSet：实现排序规则<br>   ——List:定义保存可重复有序单值的规范<br>      ——LinkedList：使用链表实现List接口<br>      ——Vector：使用数组实现List接口，线程安全的<br>      ——ArrayList：使用数组实现List接口，线程不安全</p>
+<p>b)保存键值对（key—value）<br>Map：定义保存键值对的规范（key不能重复，value可重复）<br>    ————HashMap:是线程不安全,效率高,HashMap允许null key和null value，<br>    ————HashTable:是线程安全,Hashtable不允许null key和null value，<br>    ——SortedMap:定义在Map的基础上进行排序的规范(根据key排序)<br>        ————TreeMap：对map进行排序</p>
+<p>c)Map类中的方法：HashMap,Hashtable<br>put(Object key,Object value):添加数据到map集合中<br>Set keySet():将map中所有的key取出来放在set集合中<br>Object get(Object key):从map集合中获取数据。<br>Set entrySet():将map中的key和对应的value重新创建成新的对象(Map.Entry)放在set集合中。<br>      Map.Entry:getKey()<br>      Map.Entry:getValue()<br>Set values():将map中所有的value取出来放在collection集合中  </p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">Map</span><span class="token punctuation">{</span>
+    <span class="token keyword">static</span> <span class="token keyword">interface</span> <span class="token class-name">Entry</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<h2 id="三、增强for循环"><a href="#三、增强for循环" class="headerlink" title="三、增强for循环"></a>三、增强for循环</h2><p>   a)之前的for循环<br>    for(初始化变量;循环条件;变量的控制){<br>       循环体<br>    }<br>   b)增强for循环：方便遍历集合和数组<br>     for(type element : array){<br>      循环体<br>     }<br>  type:数组或集合中数据的数据类型<br>  element:临时变量<br>  array:数组或集合的引用<br>注意：增强for遍历的集合必须是实现Iterable接口。不能明确指出数据的下标（位置）</p>
+<h2 id="四、set添加元素的时候，如何判断两个对象是否相等？"><a href="#四、set添加元素的时候，如何判断两个对象是否相等？" class="headerlink" title="四、set添加元素的时候，如何判断两个对象是否相等？"></a>四、set添加元素的时候，如何判断两个对象是否相等？</h2><p>1）先比较hashCode的值，如果hashCode的值不相等，<br>不会比较equals方法，直接返回两个对象不相等。<br>2）先比较hashCode的值，如果hashCode的值相等，<br>再比较equals方法，如果equals比较两个对象不相等，<br>返回这两个对象不相等。</p>
+<h2 id="五、如何判断元素应该添加在set集合的那个地方？-hashCode的作用"><a href="#五、如何判断元素应该添加在set集合的那个地方？-hashCode的作用" class="headerlink" title="五、如何判断元素应该添加在set集合的那个地方？(hashCode的作用)"></a>五、如何判断元素应该添加在set集合的那个地方？(hashCode的作用)</h2><p>1)使用哈希算法可以提高检索的效率。<br>     哈希算法底层有一张哈希表。哈希表相对于数组。<br>     哈希表的长度根据算法自己的计算出来的。<br>2)底层使用哈希算法决定对象所存放的位置</p>
+<blockquote>
+<p>​     所放的位置=通过对象的hashCode%哈希表的长度</p>
+</blockquote>
+<p>一个对象默认hashCode值是由对象的地址根据一定算法计算而得出来的。set中添加元素判断对象是否相同需要重写hashCode方法和equals方法。<br>如何重写hashCode方法：在java.lang.Object中<br>重写hashCode方法建议：每个不同的对象放在不同的位置将所有会影响判断对象是否相同的属性的hashCode值相加。</p>
+<pre class=" language-java"><code class="language-java"> <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">hashCode</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token comment" spellcheck="true">//return 1;</span>
+    <span class="token keyword">return</span> 所有的属性的hashCode值相加<span class="token punctuation">;</span>
+ <span class="token punctuation">}</span>
+</code></pre>
+<h2 id="六、TreeSet-TreeMap排序："><a href="#六、TreeSet-TreeMap排序：" class="headerlink" title="六、TreeSet,TreeMap排序："></a>六、TreeSet,TreeMap排序：</h2><p>1）自然排序：将需要排序的类实现java.lang.Comparable</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">interface</span> <span class="token class-name">java<span class="token punctuation">.</span>util<span class="token punctuation">.</span>Comparator</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compare</span><span class="token punctuation">(</span>Object o1<span class="token punctuation">,</span>Object o2<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span>排序规则
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Comparable</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">int</span> <span class="token function">compareTo</span><span class="token punctuation">(</span>Object obj<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token punctuation">.</span><span class="token punctuation">.</span>排序规则
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>2）覆盖排序：创建TreeSet,TreeMap对象指定排序规则。 当该类无法指定自然排序，就只能使用覆盖排序。如final String类不能用自然排序，只能用覆盖排序。</p>
+<p><strong>**</strong>覆盖排序的优先级高于默认排序<br>Set set = new TreeSet();<br>set.add(“b”);<br>set.add(“a”);<br>set.add(“d”);<br>set.add(“c”);<br>***该代码有没有问题？如果没有问题输出什么内容？</p>
 
             </div>
             <hr>
@@ -584,7 +630,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记系列整理说明.html" class="b-link-green">Java学习笔记系列整理说明</a>
+                    <a href="/java学习笔记-基础篇-—集合.html" class="b-link-green">Java学习笔记(基础篇)—集合</a>
                 </p>
             </div>
         </div>
@@ -609,24 +655,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java关键字与数据类型.html">
+                <a href="/java学习笔记-基础篇-—面向对象编程之封装、多态和继承.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java关键字与数据类型">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—面向对象编程之封装、多态和继承">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java关键字与数据类型</span>
+                        <span class="card-title">Java学习笔记(基础篇)—面向对象编程之封装、多态和继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java关键字与数据类型
-Java语言的关键字是程序代码中的特殊字符。包括：
-. 类和接口的声明——class, extends, implements, interface
-. 包引入和包声明——import, package
-. 数据类</div>
+                    <div class="summary">java学习笔记(基础篇)—面向对象编程之封装、多态和继承一. OOP中的基本概念Java的编程语言是面向对象的，采用这种语言进行编程称为面向对象编程(Object-Oriented Programming, OOP)， 它允许设计者将面向</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
                         </span>
                         <span class="publish-author">
                             
@@ -662,22 +704,20 @@ Java语言的关键字是程序代码中的特殊字符。包括：
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java数组.html">
+                <a href="/java学习笔记-基础篇-—反射.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java数组">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—反射">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java数组</span>
+                        <span class="card-title">Java学习笔记(基础篇)—反射</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java数组一：什么是数组，什么时候使用数组？
-数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。
-在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本</div>
+                    <div class="summary">java学习笔记(基础篇)—反射一、反射 ：自描述或者自定义一个类或者对象通过反射可以获得自身的对象，该对象是一个java.lang.Class的对象(就像一个镜像文件)。一个对象或者类获得自身的Class对象的过程称为反射。java.la</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-21
                             </span>
                         <span class="publish-author">
                             

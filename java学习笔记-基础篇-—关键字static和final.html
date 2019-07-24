@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记系列整理说明, chlinlearn">
-    <meta name="description" content="java学习笔记系列整理说明​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一">
+    <meta name="keywords" content="Java学习笔记(基础篇)—关键字static和final, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—关键字static和final一、关键字Static
+我们从关键字static可以修饰哪些东西入手，逐一的剖析static的使用和要注意的地方。
+
+1)修饰变量(只能修饰实例变量)—–&amp;gt;静态变量
+又称为类变">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记系列整理说明 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—关键字static和final | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +287,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记系列整理说明
+                        Java学习笔记(基础篇)—关键字static和final
                     </div>
                 </div>
             </div>
@@ -409,21 +413,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2019-07-21
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        414
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -439,11 +443,97 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java学习笔记系列整理说明"><a href="#java学习笔记系列整理说明" class="headerlink" title="java学习笔记系列整理说明"></a>java学习笔记系列整理说明</h1><p>​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一些网上博客我认为写的很好讲解的很清晰的知识点，我只是动手去收集整理和分享了这样一份学习笔记。</p>
-<p>​        整理这样一份学习笔记，方便别人也方便自己日后的复习回顾，可以说一举双得。同时，当自己去想要发表一篇学习笔记的时候，也会去认真的思考表达是否准确，归纳整理的是否全面，亦或是有无错误的地方，经过这样一轮的思考，自己也加深了对知识的理解，这也是我去整理这样一系列学习笔记的目的之一，别把学过的知识藏在电脑硬盘，学过后就不再点开。</p>
-<p>​        都说基础比天大，是你搭建大厦的基石，有基础的支撑相信去理解一些高大上的框架等也会更加容易。这样一系列的==java==基础学习笔记，正好可以经常拿来浏览阅读。</p>
-<p>​        最后，读者们有自己好的文章也可以互相添加友链，互相学习。有疑问或者在转载的文章中有侵犯您的权益，请及时联系我删除。</p>
-<p>​        联系方式：<a href="mailto:chlinlearn@gmail.com" target="_blank" rel="noopener">chlinlearn@gmail.com</a></p>
+                <h1 id="java学习笔记-基础篇-—关键字static和final"><a href="#java学习笔记-基础篇-—关键字static和final" class="headerlink" title="java学习笔记(基础篇)—关键字static和final"></a>java学习笔记(基础篇)—关键字static和final</h1><h2 id="一、关键字Static"><a href="#一、关键字Static" class="headerlink" title="一、关键字Static"></a>一、关键字Static</h2><blockquote>
+<p>我们从关键字static可以修饰哪些东西入手，逐一的剖析static的使用和要注意的地方。</p>
+</blockquote>
+<h3 id="1-修饰变量-只能修饰实例变量-—–-gt-静态变量"><a href="#1-修饰变量-只能修饰实例变量-—–-gt-静态变量" class="headerlink" title="1)修饰变量(只能修饰实例变量)—–&gt;静态变量"></a>1)修饰变量(只能修饰实例变量)—–&gt;静态变量</h3><blockquote>
+<p>又称为类变量</p>
+</blockquote>
+<p>a)所有类实例共享<br>b)使用静态变量<br>    类名.变量名<br>c)静态变量是属于这个类，非静态变量是属于对象<br>d)代码加载到内存静态变量就已经存在了<br>e)static变量和实例变量的区别：<br>     i)static变量对于每个类而言在内存中只有一个，能被类的所有实例所共享；<br>        实例变量对于每个类的每个实例都有一份，它们之间互不影响；<br>     ii)Java虚拟机在加载类的过程中为static变量分配内存，<br>         实例变量在加载完类后创建对象时分配内存；<br>     iii)static变量存在方法区，实例变量存在堆区；<br>     v)static变量可以直接通过类名访问，<br>        实例变量通过引用类型变量访问；</p>
+<h3 id="2-修饰方法-gt-静态方法"><a href="#2-修饰方法-gt-静态方法" class="headerlink" title="2)修饰方法====&gt;静态方法"></a>2)修饰方法====&gt;静态方法</h3><blockquote>
+<p>称为类方法</p>
+</blockquote>
+<p>a)调用时使用<br>    类名.方法名();<br>b)静态方法不能使用非静态的变量<br>    静态方法在类加载的时候就存在了<br>    非静态变量在对象创建的时候才存在的<br>    非静态方法可以访问静态变量<br>c)静态方法不能被非静态方法重写，静态方法不能被静态方法重写(总之就是不能被    重写)<br>d)静态方法用来表示某个类所特有的功能，这种功能的实现不依赖于类的具体实例，也不依赖于它的子类。既然如此，当前类必须为静态方法提供实现。静态方法属于类。<br>e)不能使用this关键字和super关键字；（考虑它的生命周期来理解）</p>
+<blockquote>
+<p>this表示的当前对象，而被static修饰的是属于类的，不需要创建对象就可以使用；super是代表父类对象，调用父类的静态方法直接使用类名.方法名就可以。</p>
+</blockquote>
+<h3 id="3-静态初始化块—-在类加载时只执行一次"><a href="#3-静态初始化块—-在类加载时只执行一次" class="headerlink" title="3)静态初始化块—-在类加载时只执行一次"></a>3)静态初始化块—-在类加载时只执行一次</h3><p>​     对静态变量进行初始化，当Java虚似机加载类时，就会执行该代码块；被static     所修饰的成员变量和成员方法表明归某个类所有，它不依赖于类的特定实例，被        类的所有实例共享。只要这个类被加载，Java虚拟机就能根据类名在运行时数据     区的方法区内定位到它们。而且只会被加载一次。         </p>
+<pre class=" language-java"><code class="language-java">     <span class="token keyword">static</span><span class="token punctuation">{</span>
+         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello static"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+     <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="4-普通初始化—-每创建一个对象都会被调用的"><a href="#4-普通初始化—-每创建一个对象都会被调用的" class="headerlink" title="4)普通初始化—-每创建一个对象都会被调用的"></a>4)普通初始化—-每创建一个对象都会被调用的</h3><p>对非静态变量进行初始化：</p>
+<pre class=" language-java"><code class="language-java">      <span class="token punctuation">{</span>
+          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello static"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">}</span>
+</code></pre>
+<h3 id="5-静态导入"><a href="#5-静态导入" class="headerlink" title="5)静态导入"></a>5)静态导入</h3><blockquote>
+<p>这个用法一般不太出现，很少使用。</p>
+</blockquote>
+<p>import java.lang.Math;<br>     使用：Math.random()</p>
+<p>import static java.lang.Math.*;<br>    使用：random()</p>
+<h3 id="6-补充知识"><a href="#6-补充知识" class="headerlink" title="6)补充知识"></a>6)补充知识</h3><blockquote>
+<p>创建一个对象时的类加载步骤或者说顺序: Student student =new Student();猜猜它的执行顺序会是什么？我们来理一理逻辑，子类继承父类，创建一个子类对象首先要有一个父类被创建，Student（）构造器里默认有一个super()方法，所有会先初始化父类，然后是初始化子类的部分。下面来看具体的步骤：</p>
+</blockquote>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String name<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this student constructor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this is student static block"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Student stu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String title<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this person constructor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">static</span> <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this is person static block"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token punctuation">{</span>
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello person"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<ol>
+<li>父类初始化静态变量和静态代码块(按先后顺序执行)；</li>
+<li>子类初始化静态变量和静态代码块(按先后顺序执行)；</li>
+<li>父类初始化非静态变量和非静态代码块(按先后顺序执行)；</li>
+<li>父类构造器</li>
+<li>子类初始化非静态变量和非静态代码块(按先后顺序执行)；</li>
+<li>子类构造器</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//运行结果</span>
+<span class="token keyword">this</span> is person <span class="token keyword">static</span> block
+<span class="token keyword">this</span> is student <span class="token keyword">static</span> block
+hello person
+<span class="token keyword">this</span> person constructor
+hello student
+<span class="token keyword">this</span> student constructor
+</code></pre>
+<h2 id="二、关键字final"><a href="#二、关键字final" class="headerlink" title="二、关键字final"></a>二、关键字final</h2><h3 id="1-修饰变量—-gt-常量"><a href="#1-修饰变量—-gt-常量" class="headerlink" title="1)修饰变量—-&gt;常量"></a>1)修饰变量—-&gt;常量</h3><p>​        变量必须初始化，变量的值不允许修改。<br>​        final变量都必须显示初始化，<br>​        a) 修饰静态变量，只能在定义变量时进行初始化；<br>​        b) 修饰实例变量，可以在定义变量时进行初始化，或者在构造方法中进行初始                化；</p>
+<h3 id="2-修饰方法"><a href="#2-修饰方法" class="headerlink" title="2)修饰方法"></a>2)修饰方法</h3><p>​      该方法不能够被重写</p>
+<h3 id="3-修饰类"><a href="#3-修饰类" class="headerlink" title="3)修饰类"></a>3)修饰类</h3><p>​      该类不能够被继承,即不能与abstract同时使用。<br>​      String类就是final修饰的类，所有字符串是不能改变的，只能通过拼接创建新的         String对象，这样很浪费内存，所以又有了StringBuilder和StringBuffer；这两      个类后面再解释，可以去思考和看他们的实现源码。</p>
+<h2 id="三、思考final、finally和finalize的区别"><a href="#三、思考final、finally和finalize的区别" class="headerlink" title="三、思考final、finally和finalize的区别"></a>三、思考final、finally和finalize的区别</h2><blockquote>
+<p>后面出一篇关于这个的文章，敬请关注。</p>
+</blockquote>
 
             </div>
             <hr>
@@ -584,7 +674,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记系列整理说明.html" class="b-link-green">Java学习笔记系列整理说明</a>
+                    <a href="/java学习笔记-基础篇-—关键字static和final.html" class="b-link-green">Java学习笔记(基础篇)—关键字static和final</a>
                 </p>
             </div>
         </div>
@@ -609,24 +699,20 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java关键字与数据类型.html">
+                <a href="/java学习笔记-基础篇-—反射.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java关键字与数据类型">
+                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—反射">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java关键字与数据类型</span>
+                        <span class="card-title">Java学习笔记(基础篇)—反射</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java关键字与数据类型
-Java语言的关键字是程序代码中的特殊字符。包括：
-. 类和接口的声明——class, extends, implements, interface
-. 包引入和包声明——import, package
-. 数据类</div>
+                    <div class="summary">java学习笔记(基础篇)—反射一、反射 ：自描述或者自定义一个类或者对象通过反射可以获得自身的对象，该对象是一个java.lang.Class的对象(就像一个镜像文件)。一个对象或者类获得自身的Class对象的过程称为反射。java.la</div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-21
                         </span>
                         <span class="publish-author">
                             
@@ -662,19 +748,20 @@ Java语言的关键字是程序代码中的特殊字符。包括：
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java数组.html">
+                <a href="/java学习笔记-基础篇-—变量与表达式.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java数组">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—变量与表达式">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java数组</span>
+                        <span class="card-title">Java学习笔记(基础篇)—变量与表达式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java数组一：什么是数组，什么时候使用数组？
-数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。
-在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本</div>
+                    <div class="summary">java学习笔记(基础篇)—变量与表达式一：局部变量和实例变量
+定义变量是指设定变量的数据类型和变量的名字，Java语言要求变量遵循先定义，再初始化，然后使用的规则。
+
+作用域：指它的存在范围，只有在这个范围内，程序代码才能访问它。变量的生</div>
                     <div class="publish-info">
                             <span class="publish-date">
                                 <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20

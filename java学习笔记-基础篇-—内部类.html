@@ -4,8 +4,8 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记系列整理说明, chlinlearn">
-    <meta name="description" content="java学习笔记系列整理说明​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一">
+    <meta name="keywords" content="Java学习笔记(基础篇)—内部类, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—内部类一、内部类1.顶层类和内部类的区别：  1)位置:  内部类是定义一个类的里面或者一个方法中,或者一个表达式中。  顶层类是定义在package下  2)修饰符：顶层类只能处于public和默认访问级别， ">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记系列整理说明 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—内部类 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +283,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记系列整理说明
+                        Java学习笔记(基础篇)—内部类
                     </div>
                 </div>
             </div>
@@ -409,21 +409,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-20
+                    2019-07-23
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        414
+                        1.7k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        6 分
                     </div>
                     
                 
@@ -439,11 +439,63 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java学习笔记系列整理说明"><a href="#java学习笔记系列整理说明" class="headerlink" title="java学习笔记系列整理说明"></a>java学习笔记系列整理说明</h1><p>​        陆陆续续也巩固学习==java==基础也有一段时间了，这里整理了一些我认为比较的重要的知识点，供自己或者读者以后回顾和学习。这是一个学习笔记系列，有自己整理撰写的部分，也有很多老师分享的笔记和一些网上博客我认为写的很好讲解的很清晰的知识点，我只是动手去收集整理和分享了这样一份学习笔记。</p>
-<p>​        整理这样一份学习笔记，方便别人也方便自己日后的复习回顾，可以说一举双得。同时，当自己去想要发表一篇学习笔记的时候，也会去认真的思考表达是否准确，归纳整理的是否全面，亦或是有无错误的地方，经过这样一轮的思考，自己也加深了对知识的理解，这也是我去整理这样一系列学习笔记的目的之一，别把学过的知识藏在电脑硬盘，学过后就不再点开。</p>
-<p>​        都说基础比天大，是你搭建大厦的基石，有基础的支撑相信去理解一些高大上的框架等也会更加容易。这样一系列的==java==基础学习笔记，正好可以经常拿来浏览阅读。</p>
-<p>​        最后，读者们有自己好的文章也可以互相添加友链，互相学习。有疑问或者在转载的文章中有侵犯您的权益，请及时联系我删除。</p>
-<p>​        联系方式：<a href="mailto:chlinlearn@gmail.com" target="_blank" rel="noopener">chlinlearn@gmail.com</a></p>
+                <h1 id="java学习笔记-基础篇-—内部类"><a href="#java学习笔记-基础篇-—内部类" class="headerlink" title="java学习笔记(基础篇)—内部类"></a>java学习笔记(基础篇)—内部类</h1><h2 id="一、内部类"><a href="#一、内部类" class="headerlink" title="一、内部类"></a>一、内部类</h2><h4 id="1-顶层类和内部类的区别："><a href="#1-顶层类和内部类的区别：" class="headerlink" title="1.顶层类和内部类的区别："></a>1.顶层类和内部类的区别：</h4><p>  1)位置:<br>  内部类是定义一个类的里面或者一个方法中,或者一个表达式中。<br>  顶层类是定义在package下<br>  2)修饰符：顶层类只能处于public和默认访问级别，<br>            成员内部类可以处于public, protected, private和默认这4种访问级别；</p>
+<h4 id="2-作用："><a href="#2-作用：" class="headerlink" title="2.作用："></a>2.作用：</h4><p>  1)可以避免命名冲突。<br>  2)定义类的范围从package变成了类。在一个类的内部定义的类称为内部类。<br>  3)进行再一次的封装<br>  4)分担外围类的功能</p>
+<h4 id="3-内部类的分类："><a href="#3-内部类的分类：" class="headerlink" title="3.内部类的分类："></a>3.内部类的分类：</h4><p>​    变量按照作用域可分为：<br>​      1) 成员变量: 实例变量、静态变量；<br>​      2) 局部变量；<br>​     同样，内部类按照作用域可分为；<br>​      1) 成员内部类: 实例内部类、静态内部类；<br>​      2) 局部内部类；放在方法里<br>​      3) 匿名内部类</p>
+<h5 id="a-静态内部类-用static修饰-相当于静态方法。放在方法外，类里面的。"><a href="#a-静态内部类-用static修饰-相当于静态方法。放在方法外，类里面的。" class="headerlink" title="a) 静态内部类: 用static修饰,相当于静态方法。放在方法外，类里面的。"></a>a) 静态内部类: 用static修饰,相当于静态方法。放在方法外，类里面的。</h5><p>静态内部类具有以下特点：<br>1)静态内部类可以直接访问外部类的<strong>静态资源</strong>。如果静态内部类中的变量名字和外围类的变量名字相同，需要指定访问时的谁的名字。<br>2)静态内部类如果访问外部类的实例成员，<br>  就必须通过外部类的实例去访问。<br>3)静态内部类的实例不会自动持有外部类的特定实例的引用，<br>  在创建静态内部类的实例时，不必创建外部类的实例。<br>4)在静态内部类中可以定义静态成员和实例成员。<br>5)外围类可以通过完整的类名直接访问静态内部类的静态成员。<br>6)外围类可以通过内部类对象调用静态内部类对象的非静态成员。<br>7)在静态内部类中和外围类中创建静态内部类的对象:</p>
+<blockquote>
+<p>静态内部类类名 m=new 静态内部类类名();</p>
+</blockquote>
+<p>在其他类中创建静态内部类的对象:</p>
+<blockquote>
+<p>外围类.静态内部类类名 m= new 外围类.静态内部类类名();</p>
+</blockquote>
+<h5 id="b-实例内部类：没有static修饰符。相当于成员变量。放在方法外，类里面的。"><a href="#b-实例内部类：没有static修饰符。相当于成员变量。放在方法外，类里面的。" class="headerlink" title="b)实例内部类：没有static修饰符。相当于成员变量。放在方法外，类里面的。"></a>b)实例内部类：没有static修饰符。相当于成员变量。放在方法外，类里面的。</h5><p>特点：<br>1)在内部类中,可以直接访问外部类的所有资源(属性和方法)。<br>2)成员内部类不能定义静态的资源，只能定义非静态的资源。<br>3)外围类不能直接访问成员内部类的资源.先创建成员内部类的对象，在通过调用非静态资源(对象.资源).<br>4)在成员内部类中和外围类中创建成员内部类的对象成员内部类中:</p>
+<blockquote>
+<p>类名 m=new 成员内部类类名();</p>
+</blockquote>
+<p>外围类中:</p>
+<blockquote>
+<p>类名 m=this.new 成员内部类类名();</p>
+</blockquote>
+<p>在其他类中创建成员内部类的对象:</p>
+<blockquote>
+<p>外围类.成员内部类类名 m=new 外围类().new 成员内部类类名();</p>
+</blockquote>
+<p>5)在创建实例内部类的实例时,外部类的实例必须已经存在。<br>6)在成员内部类中调用外围类中同名资源:</p>
+<blockquote>
+<p>外围类.this.资源</p>
+</blockquote>
+<p>7)如果实例内部类B与外部类A包含同名的成员，<br>那么在类B中，this.v表示类B的成员， A.this.v表示类A的成员<br>8)实例内部类的实例自动持有外部类的实例的引用。<br>9)外部类实例与内部类实例之间是一对多的关系，一个内部类实例只会引用一个外部类实例，而一个外部类实例对应零个或多个内部类实例。</p>
+<h5 id="c-局部内部类-在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。"><a href="#c-局部内部类-在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。" class="headerlink" title="c) 局部内部类: 在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。"></a>c) 局部内部类: 在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。</h5><p>特点：<br>1)局部内部类只能在当前方法中使用。<br>2)局部内部类和实例内部类一样，不能包含静态成员。<br>3)在局部内部类中定义的内部类也不能被public、<br> protected和private这些访问控制修饰符以及static修饰（都是局部的）;<br>4)可以访问外部类的所有成员。<br>5)局部内部类还可以访问所在方法中的final类型的局部变量。final延长局部变量的生命周期。</p>
+<h5 id="d-匿名内部类：在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。"><a href="#d-匿名内部类：在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。" class="headerlink" title="d)匿名内部类：在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。"></a>d)匿名内部类：在一个方法中定义的内部类，它的可见范围是当前方法。和局部变量一样。</h5><p>特点：<br>1)没有类名，使用接口或者抽象类代替类名<br>2)访问外围类的一切资源(方法和属性)<br>3)访问该方法final修饰的局部变量，jdk1.8以后不需要<br>4)放在方法中或者作为参数。</p>
+<p>几种内部类的区别：</p>
+<ol>
+<li>创建<br>a. 声明的位置:<br>  静态内部类：类的内部，方法的外部，用static关键字修饰；<br>  实例内部类：类的内部，方法的外部，不用static关键字修饰；<br>  局部内部类：方法的内部；<br>  匿名内部类：既可以在类的内部，方法的外部，也可以在方法的内部；</li>
+</ol>
+<pre><code>  b. 实例化方式:
+     静态内部类：new Outer.Inner();          //在外部类外创建；
+                              new Inner();                //在外部类内内部类外创建
+     实例内部类：new Outer().new Inner();      //在外部类外创建；
+                              this.new Inner();             //在外部类内内部类外创建 
+     局部内部类：new Inner();                  //只能在方法内部创建
+     匿名内部类：new 类名() {};            
+</code></pre><ol start="2">
+<li>访问<br>  a. 外部类访问内部类：<br>  静态内部类：通过完整的类名直接访问静态内部类的静态成员;<br>  实例内部类：通过内部类的实例去访问内部类的成员;<br>  局部内部类：不能访问；<br>  匿名内部类：不能访问；<br>  b. 内部类访问外部类：<br>  静态内部类：直接访问外部类的静态成员；<br>  实例内部类：可以直接访问外部类的所有成员;<pre><code>   如果实例内部类B与外部类A包含同名的成员，那么在类B中， this.v表示类B的成员，
+          A.this.v表示类A的成员。
+</code></pre>  局部内部类：可以直接访问外部类的所有成员, 访问所在方法中的final类型的参数和变量；<br>  匿名内部类：可以直接访问外部类的所有成员, 访问所在方法中的final类型的参数和变量；</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//成员内部类，静态内部类</span>
+StaticInnerTest<span class="token punctuation">.</span><span class="token keyword">class</span>
+<span class="token class-name">StaticInnerTest</span>$MaxMin<span class="token punctuation">.</span><span class="token keyword">class</span>
+<span class="token comment" spellcheck="true">//局部内部类</span>
+LocalInnerTest<span class="token punctuation">.</span><span class="token keyword">class</span>         
+<span class="token class-name">LocalInnerTest</span>$1MaxMin<span class="token punctuation">.</span><span class="token keyword">class</span>
+<span class="token comment" spellcheck="true">//匿名内部类</span>
+AnonymousInnerTest<span class="token punctuation">.</span><span class="token keyword">class</span>
+<span class="token class-name">AnonymousInnerTest</span>$<span class="token number">1</span><span class="token punctuation">.</span><span class="token keyword">class</span>
+</code></pre>
+<h5 id="内部类的使用："><a href="#内部类的使用：" class="headerlink" title="内部类的使用："></a>内部类的使用：</h5><p>图形化界面中组件的监听事件工厂模式,在内部类只有在该外围类有意义，出了该外围类就没有意义了， 就可以将该类定义成内部类。 </p>
 
             </div>
             <hr>
@@ -584,7 +636,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记系列整理说明.html" class="b-link-green">Java学习笔记系列整理说明</a>
+                    <a href="/java学习笔记-基础篇-—内部类.html" class="b-link-green">Java学习笔记(基础篇)—内部类</a>
                 </p>
             </div>
         </div>
@@ -607,27 +659,24 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java关键字与数据类型.html">
+                <a href="/java学习笔记-基础篇-—内部类.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java关键字与数据类型">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—内部类">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java关键字与数据类型</span>
+                        <span class="card-title">Java学习笔记(基础篇)—内部类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java关键字与数据类型
-Java语言的关键字是程序代码中的特殊字符。包括：
-. 类和接口的声明——class, extends, implements, interface
-. 包引入和包声明——import, package
-. 数据类</div>
+                    <div class="summary">java学习笔记(基础篇)—内部类一、内部类1.顶层类和内部类的区别：  1)位置:  内部类是定义一个类的里面或者一个方法中,或者一个表达式中。  顶层类是定义在package下  2)修饰符：顶层类只能处于public和默认访问级别， </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -640,6 +689,7 @@ Java语言的关键字是程序代码中的特殊字符。包括：
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -662,22 +712,20 @@ Java语言的关键字是程序代码中的特殊字符。包括：
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—java数组.html">
+                <a href="/java学习笔记-基础篇-—面向对象编程之封装、多态和继承.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—java数组">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—面向对象编程之封装、多态和继承">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—java数组</span>
+                        <span class="card-title">Java学习笔记(基础篇)—面向对象编程之封装、多态和继承</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java数组一：什么是数组，什么时候使用数组？
-数组是用来保存一组数据类型相同的元素的有序集合，数组中的每个数据称为元素。有序集合可以按照顺序或者下标取数组中的元素。
-在Java中，数组也是Java对象。数组中的元素可以是任意类型(包括基本</div>
+                    <div class="summary">java学习笔记(基础篇)—面向对象编程之封装、多态和继承一. OOP中的基本概念Java的编程语言是面向对象的，采用这种语言进行编程称为面向对象编程(Object-Oriented Programming, OOP)， 它允许设计者将面向</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-20
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
                             </span>
                         <span class="publish-author">
                             
