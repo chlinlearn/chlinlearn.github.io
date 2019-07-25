@@ -4,8 +4,12 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于, chlinlearn">
-    <meta name="description" content="关于 | chlinlearn&#39;s blog">
+    <meta name="keywords" content="Java学习笔记(基础篇)—线程, chlinlearn">
+    <meta name="description" content="一、线程与进程线程是程序执行的最小单位，是动态的。进程是系统进程资源分配和系统调度的最小单位，是动态的。线程和进程的目的：多任务—&amp;gt;效率高
+同时性
+ 在同一个时间点只能执行一个进程或线程 在同一个时间段可以执行多个进程或线程
+
+多进程">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(基础篇)—线程 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +287,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于
+                        Java学习笔记(基础篇)—线程
                     </div>
                 </div>
             </div>
@@ -379,12 +383,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/基础篇/" target="_blank">
+                                <span class="chip bg-color">基础篇</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,21 +413,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-07-25
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1
+                        1.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        4 分
                     </div>
                     
                 
@@ -422,7 +443,54 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/chlinlearn" target="_blank" rel="noopener">Github</a><br><a href="www.chlinlearn.cn">Blog</a><br><a href="chlinlearn@gmail.com">Email</a></p>
+                <h2 id="一、线程与进程"><a href="#一、线程与进程" class="headerlink" title="一、线程与进程"></a>一、线程与进程</h2><p>线程是程序执行的最小单位，是动态的。<br>进程是系统进程资源分配和系统调度的最小单位，是动态的。<br>线程和进程的目的：多任务—&gt;效率高</p>
+<h5 id="同时性"><a href="#同时性" class="headerlink" title="同时性"></a>同时性</h5><blockquote>
+<p> 在同一个时间点只能执行一个进程或线程<br> 在同一个时间段可以执行多个进程或线程</p>
+</blockquote>
+<p>多进程的数据不共享，每个进程都有自己的独立内存空间。多线程数据的进程的数据是共享的，每一个线程又有自己独立堆栈区空间。线程与线程之间是独立的，相互之间不受影响。</p>
+<blockquote>
+<p>一个程序可以启动多个进程<br>一个进程可以启动多个线程<br>线程必须通过进程启动，不能独立存在的。</p>
+</blockquote>
+<p>.class运行在JVM上，.class就是一个一个的线程。JVM就是一个进程。</p>
+<h2 id="二：线程的三要素"><a href="#二：线程的三要素" class="headerlink" title="二：线程的三要素"></a>二：线程的三要素</h2><h5 id="CPU："><a href="#CPU：" class="headerlink" title="CPU："></a>CPU：</h5><p>运行线程，所有线程共享CPU。只有线程抢占CPU成功才会执行。</p>
+<h5 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h5><p>线程运行过程中执行的代码块。线程启动之后会执行public void run()的方法。</p>
+<h5 id="数据："><a href="#数据：" class="headerlink" title="数据："></a>数据：</h5><p>​      1)局部变量是多线程不共享<br>​      2)extends  Thread方式实现多线程，静态变量是共享，实例变量不共享<br>​      3)implements Runnable方式实现多线程，静态变量是共享的，实例变量也共享</p>
+<h2 id="三：使用线程"><a href="#三：使用线程" class="headerlink" title="三：使用线程"></a>三：使用线程</h2><h5 id="第一种方式："><a href="#第一种方式：" class="headerlink" title="第一种方式："></a>第一种方式：</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">extends</span> <span class="token class-name">Thread</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+建线程：Thread t1<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token comment" spellcheck="true">//不要t1.run()来企图启动线程，那是单纯的调用该方法，并没有启动一个线程</span>
+启动线程： t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="第二种方式："><a href="#第二种方式：" class="headerlink" title="第二种方式："></a>第二种方式：</h5><pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">MyThread</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">run</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+创建线程：MyThread m<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MyThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    Thread t1 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Thread</span><span class="token punctuation">(</span>m<span class="token punctuation">)</span><span class="token punctuation">;</span>
+启动线程： t1<span class="token punctuation">.</span><span class="token function">start</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre>
+<h5 id="Thread类中的方法："><a href="#Thread类中的方法：" class="headerlink" title="Thread类中的方法："></a>Thread类中的方法：</h5><p>getName(): 获取当前线程的名字<br>static sleep(long): 强制当前正在执行的线程休眠(暂停执行),只是让出CPU,但不会释放锁。<br>static currentThread(): 获取当前正在执行的线程。</p>
+<p>Thread类中的方法：<br>getName():获取当前线程的名字<br>static sleep(long):强制当前正在执行的线程休眠(暂停执行),以“减慢线程”。<br>static currentThread():获取当前正在执行的线程。</p>
+<h5 id="注意："><a href="#注意：" class="headerlink" title="注意："></a>注意：</h5><p>线程的运行时抢占式，所以线程的执行结果是不可预知的。</p>
+<h2 id="四：为什么要有两种方式"><a href="#四：为什么要有两种方式" class="headerlink" title="四：为什么要有两种方式"></a>四：为什么要有两种方式</h2><p>java单继承</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">class</span> <span class="token class-name">Test</span> <span class="token keyword">extends</span> <span class="token class-name">Student</span> <span class="token keyword">implements</span> <span class="token class-name">Runnable</span><span class="token punctuation">{</span>
+<span class="token punctuation">}</span> 
+</code></pre>
+<h2 id="五：线程的状态"><a href="#五：线程的状态" class="headerlink" title="五：线程的状态"></a>五：线程的状态</h2><p>a)新建状态(new)：线程对象已经创建，还没有在其上调用start()方法。</p>
+<p>b)就绪状态(Runnable)： 线程已经准备好了，等待CPU的调度，当线程有资格行，但调度程序还没有把它选定为运行线程时线程所处的状态。当start()方法调用时，线程首先进入就绪状态。在线程运行之后或者从阻塞、等待或睡眠状态回后，也返回到就绪状态。就绪状态维护了一个线程池。 所有的就绪状态的线程都会进入到线程池中。</p>
+<p>c)运行状态(Running)：线程调度程序从可运行池中选择一个线程作为  当前线程时线程所处的状态。这也是线程进入 运行状态的唯一一种方式。CPU正在执行的线程。</p>
+<p>d)等待/阻塞/睡眠状态：这是线程有资格运行时它所处的状态。实际上这个三状态组合为一种，其共同点是：线程仍旧是活的，但是当前没有条件运行。换句话说，它是可运行的，但是如果某件事件出现，他可能返回到就绪状态。</p>
+<p>e)死亡状态：当线程的run()方法完成时就认为它死去。这个线程对象也许是活的，但是，它已经不是一个单独执行的线程。线程一旦死亡，就不能复生。 如果在一个死去的线程上调用start()方法，会抛出java.lang.IllegalThreadStateException异常。</p>
+<h2 id="六：中断线程：让线程正常结束，到死亡状态"><a href="#六：中断线程：让线程正常结束，到死亡状态" class="headerlink" title="六：中断线程：让线程正常结束，到死亡状态"></a>六：中断线程：让线程正常结束，到死亡状态</h2><p>1)使用标志变量中断线程。就好像开车一样。<br>2)使用stop()已经过时了,虽然它确实停止了一个正在运行的线程，然而，这种方法是不安全也是不受提倡的。</p>
+<h5 id="Thread类中的方法：-1"><a href="#Thread类中的方法：-1" class="headerlink" title="Thread类中的方法："></a>Thread类中的方法：</h5><p>join(): 等待线程的执行结束。在哪个线程中调用就谁等待。谁调用该方法就等待谁。<br>interrupt(): 中断阻塞中的线程。不能中断正在执行的线程。<br>isInterrupted(): 判断是否被中断<br>static interrupted(): 清空中断信息</p>
+<h5 id="七：线程的并发访问：多线程同时操作同一个对象。"><a href="#七：线程的并发访问：多线程同时操作同一个对象。" class="headerlink" title="七：线程的并发访问：多线程同时操作同一个对象。"></a>七：线程的并发访问：多线程同时操作同一个对象。</h5><p>synchronized(共享区){临界区}<br>共享区：多线程同时操作同一个对象<br>临界区：多线程对共享区进行操作的代码区<br>将所有影响的方法都定义成线程安全的方法就变成了线程安全的类。synchronized可以放在方法上，就是一个同步方法。</p>
+<blockquote>
+<p>同步锁有很多种，这里只是简单的描述了一下synchronized关键字，关于具体的使用和细节，后续会专门推出一篇文章来讲。</p>
+</blockquote>
+<p>欢迎访问我的腾讯云+社区：<a href="https://cloud.tencent.com/developer/user/4940115" target="_blank" rel="noopener">传送门</a></p>
 
             </div>
             <hr>
@@ -563,7 +631,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/about/index.html" class="b-link-green">关于</a>
+                    <a href="/java学习笔记-基础篇-—线程.html" class="b-link-green">Java学习笔记(基础篇)—线程</a>
                 </p>
             </div>
         </div>
@@ -589,31 +657,50 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-基础篇-—线程.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—线程">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">Java学习笔记(基础篇)—线程</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">一、线程与进程线程是程序执行的最小单位，是动态的。进程是系统进程资源分配和系统调度的最小单位，是动态的。线程和进程的目的：多任务—&gt;效率高
+同时性
+ 在同一个时间点只能执行一个进程或线程 在同一个时间段可以执行多个进程或线程
+
+多进程</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-25
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -621,34 +708,48 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-基础篇-—内部类.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—内部类">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">Java学习笔记(基础篇)—内部类</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">java学习笔记(基础篇)—内部类一、内部类1.顶层类和内部类的区别：  1)位置:  内部类是定义一个类的里面或者一个方法中,或者一个表达式中。  顶层类是定义在package下  2)修饰符：顶层类只能处于public和默认访问级别， </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-23
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
