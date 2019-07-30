@@ -4,8 +4,14 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于, chlinlearn">
-    <meta name="description" content="关于 | chlinlearn&#39;s blog">
+    <meta name="keywords" content="java学习笔记(基础篇)—IO流, chlinlearn">
+    <meta name="description" content="java学习笔记(基础篇)—IO流一：流的概念在Java中，把一组有序的数据序列称为流。
+
+​    如a.txt的文件拷贝到b.txt中。
+
+在Java中流是使用统一的方式操作输入和输出的数据。
+
+从文件中读取，从键盘读取，从网络中读取…">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +19,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于 | chlinlearn&#39;s blog</title>
+    <title>java学习笔记(基础篇)—IO流 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +289,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于
+                        java学习笔记(基础篇)—IO流
                     </div>
                 </div>
             </div>
@@ -379,12 +385,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/基础篇/" target="_blank">
+                                <span class="chip bg-color">基础篇</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,21 +415,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-07-30
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1
+                        2.1k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        1 分
+                        7 分
                     </div>
                     
                 
@@ -422,7 +445,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/chlinlearn" target="_blank" rel="noopener">Github</a><br><a href="www.chlinlearn.cn">Blog</a><br><a href="chlinlearn@gmail.com">Email</a></p>
+                <h1 id="java学习笔记-基础篇-—IO流"><a href="#java学习笔记-基础篇-—IO流" class="headerlink" title="java学习笔记(基础篇)—IO流"></a>java学习笔记(基础篇)—IO流</h1><h2 id="一：流的概念"><a href="#一：流的概念" class="headerlink" title="一：流的概念"></a>一：流的概念</h2><p>在Java中，把一组有序的数据序列称为流。</p>
+<ul>
+<li>​    如a.txt的文件拷贝到b.txt中。</li>
+</ul>
+<p>在Java中流是使用统一的方式操作输入和输出的数据。</p>
+<ul>
+<li>从文件中读取，从键盘读取，从网络中读取…<br>输出到文件，发送到网络….</li>
+</ul>
+<p>流就是一个对象。所在的包java.io.*，Java I/O系统负责处理程序的输入和输出，java.io包它对各种常见的输入流和输出流进行了抽象。</p>
+<h2 id="二：流的分类"><a href="#二：流的分类" class="headerlink" title="二：流的分类"></a>二：流的分类</h2><h5 id="1-根据流操作的方向-参照物：当前程序"><a href="#1-根据流操作的方向-参照物：当前程序" class="headerlink" title="1)根据流操作的方向,参照物：当前程序"></a>1)根据流操作的方向,参照物：当前程序</h5><p>​    a)输入流:将数据读取到程序中就是输入流，reader<br>​    b)输出流:将程序中的数据写出到文件中就是输出流。writer</p>
+<h5 id="2-根据类操作的最小数据单元。"><a href="#2-根据类操作的最小数据单元。" class="headerlink" title="2)根据类操作的最小数据单元。"></a>2)根据类操作的最小数据单元。</h5><p>​    a)字节类：如果数据流中最小的数据单元是字节，那么称这种流为字节流；字节流处理单元为 1 个字节，可以操作字节和字节数组</p>
+<p>​    b)字符类：如果数据流中最小的数据单元是字符，那么称这种流为字符流。字符流处理的单元为 2 个字节的 Unicode 字符，可以操作字符、字符数组或字符串Java内用Unicode 编码存储字符,字符流处理类负责将外部的其他编码的字符流和java内Unicode 字符流之间的转换。字符流（一次可以处理一个缓冲区）一次操作比字节流（一次一个字节）效率高。</p>
+<h5 id="3-根据流的角色"><a href="#3-根据流的角色" class="headerlink" title="3)根据流的角色"></a>3)根据流的角色</h5><p>​    a)节点流,如FileInputStream<br>​    b)包装流/处理流，如BufferedInputStream。带有缓冲区</p>
+<h2 id="三：常用流"><a href="#三：常用流" class="headerlink" title="三：常用流"></a>三：常用流</h2><h5 id="a-java-io-InputStream和java-io-OutputStream"><a href="#a-java-io-InputStream和java-io-OutputStream" class="headerlink" title="a)java.io.InputStream和java.io.OutputStream"></a>a)java.io.InputStream和java.io.OutputStream</h5><p>  分别表示字节输入流和字节输出流，<br>  是所有字节输入和输出流的父类.其中的方法参照下面的四</p>
+<h5 id="b-FileInputStream-FileOutputStream"><a href="#b-FileInputStream-FileOutputStream" class="headerlink" title="b)FileInputStream,FileOutputStream"></a>b)FileInputStream,FileOutputStream</h5><p>  针对文件进行字节操作。</p>
+<h5 id="c-BufferedOutputStream和BufferInputStream流"><a href="#c-BufferedOutputStream和BufferInputStream流" class="headerlink" title="c)BufferedOutputStream和BufferInputStream流"></a>c)BufferedOutputStream和BufferInputStream流</h5><p>  带有缓冲区的流。—调用flush()刷新缓冲流。<br>  增强输入和输出流的性能。<br>  提高读写的效率。<br>  包装流是可以对其他流进行重新包装。</p>
+<h5 id="d-DataInputStream和DataOutputStream"><a href="#d-DataInputStream和DataOutputStream" class="headerlink" title="d)DataInputStream和DataOutputStream."></a>d)DataInputStream和DataOutputStream.</h5><p>  针对于基本数据类型进行操作</p>
+<h5 id="e-ObjectInputStream和ObjectOutputStream"><a href="#e-ObjectInputStream和ObjectOutputStream" class="headerlink" title="e)ObjectInputStream和ObjectOutputStream"></a>e)ObjectInputStream和ObjectOutputStream</h5><p>  针对于类类型的数据(对象)进行操作。</p>
+<blockquote>
+<p>  序列化：将对象保存到文件中或者传输到网络的过程。<br>  反序列化：将文件中或者网络中将对象读取到程序的过程。</p>
+</blockquote>
+<p>  进行序列化或者反序列化的类必须实现Serializable接口。该接口是一个空接口，     只是起到了标识的作用，标识该对象可以进行序列化和反序列化serialVersionUID用来表明实现序列化类的不同版本间的兼容性。如果你修改了此类, 要修改此值。否则以前用老版本的类序列化的类恢复时会出错。</p>
+<blockquote>
+<p> transient：该修饰的属性不会被序列化。是透明的属性。</p>
+</blockquote>
+<h5 id="f-PipedInputStream-PipedOutputStream"><a href="#f-PipedInputStream-PipedOutputStream" class="headerlink" title="f)PipedInputStream,PipedOutputStream"></a>f)PipedInputStream,PipedOutputStream</h5><p>   管道输入，输出流，<br>   针对线程读取和写入数据<br>   connect():管道输入流连接到管道输出流</p>
+<h5 id="g-Reader-Writer抽象类"><a href="#g-Reader-Writer抽象类" class="headerlink" title="g)Reader,Writer抽象类"></a>g)Reader,Writer抽象类</h5><p>  是所有字符流输出和输入的父类。<br>  字符流是在字节流的基础上进行字符编码(UTF-8,GBK,GB2312…)</p>
+<h5 id="h-InputStreamReader-OutputStreamWriter"><a href="#h-InputStreamReader-OutputStreamWriter" class="headerlink" title="h)InputStreamReader,OutputStreamWriter"></a>h)InputStreamReader,OutputStreamWriter</h5><p>  一组转换流—&gt;字节和字符之间的转换。<br>  InputStreamReader：字节转换成字符的桥梁<br>  OutputStreamWriter:字符转换成字节的桥梁</p>
+<h5 id="i-BufferedReader-BufferedWriter"><a href="#i-BufferedReader-BufferedWriter" class="headerlink" title="i)BufferedReader,BufferedWriter"></a>i)BufferedReader,BufferedWriter</h5><p>  带有缓冲区的字符流。<br>   1)保存hello,您好时指定编码方式。<br>      取数据时也指定编码方式。<br>   2)采用这种方式完成文件的拷贝工作。</p>
+<h5 id="j-FileReader和FileWriter"><a href="#j-FileReader和FileWriter" class="headerlink" title="j)FileReader和FileWriter"></a>j)FileReader和FileWriter</h5><p>  针对文件的字符流</p>
+<h5 id="k-PrintWriter-PrintStream"><a href="#k-PrintWriter-PrintStream" class="headerlink" title="k)PrintWriter,PrintStream"></a>k)PrintWriter,PrintStream</h5><p>  都是输出流,可以进行格式化输出<br>  PrintWriter:即可以包装字符类，也可以包装字节流。<br>  PrintStream即可以输出字符，也可以输出字节</p>
+<h5 id="l-File对象"><a href="#l-File对象" class="headerlink" title="l)File对象"></a>l)File对象</h5><h5 id="m-RandomAccessFile"><a href="#m-RandomAccessFile" class="headerlink" title="m)RandomAccessFile"></a>m)RandomAccessFile</h5><p>  在文件的任意位置进行读和写的操作<br>  seek(long),read(),writer();<br>  当操作大文件的时候使用该类。</p>
+<h2 id="四-字节输入流和输出流概述"><a href="#四-字节输入流和输出流概述" class="headerlink" title="四. 字节输入流和输出流概述"></a>四. 字节输入流和输出流概述</h2><p>在java.io包中，java.io.InputStream表示字节输入流，java.io.OutputStream表示字节输出流，它们都是抽象类，不能被实例化。</p>
+<h5 id="InputStream类提供了一系列和读取数据有关的方法："><a href="#InputStream类提供了一系列和读取数据有关的方法：" class="headerlink" title="InputStream类提供了一系列和读取数据有关的方法："></a>InputStream类提供了一系列和读取数据有关的方法：</h5><ol>
+<li><p>read(): 从输入流读取数据：有三种重载形式：　</p>
+<p> a)int read(): 从输入流读取一个8位的字节，把它转换为0-255之间的整数，并返回这一整数。例如，如果读到的字节为9，则返回9，如果读到<br> 的字节为-9，则返回247。如果遇到输入流的结尾，则返回-1;<br> b)int read(byte[] b): 从输入流读取若干个字节，把它们保存到参数b指定的字节数组中。返回的整数表示读取的字节数。如果遇到输入流的结尾，则返回-1;<br>c)int read(byte[] b, int off, int len): 从输入流读取若干个字节，把它们保存到参数b指定的字节数组中。 返回的整数表示读取的字节数。参数off指定在字节数组中开始保存数据的起始下标，参数len指定读取的字节数目。返回的整数表示实现读取的字节数。如果遇到输入流的结尾，则返回-1;以上第一个read方法从输入流读取一个字节，而其余两个read方法从输入流批量读取若干字节。在从文件或键盘读数据时，采用后面两个read方法可以减少进行物理读文件或键盘的次数，因此能提高I/O操作的效率。</p>
+</li>
+<li><p>void close(): 关闭输入流，InputStream类本身的close()方法不执行任何操作。它的一些子类覆盖了close()方法，在close()方法中释放和流有关的系统资源。</p>
+</li>
+<li><p>int available(): 返回可以从输入流中读取的字节数目；</p>
+</li>
+<li><p>skip(long): 从输入流中跳过参数n指定数目的字节。</p>
+</li>
+<li><p>boolean markSupported()，void mark(int)，void reset(): 如果要从流中重复读入数据，先用markSupported()方法来判断这个流是否支持重复读入数据，如果返回true，则表明可以在流上设置标记。接下来调用mark(int readLimit)方法从流的当前位置开始设置标记。最后调用reset()方法，该方法使输入流重新定位到刚才做了标记的起始位置。这样就可以重复读取做过标记的数据了。</p>
+</li>
+</ol>
+<h5 id="OuputStream类提供了一系列和写数据有关的方法："><a href="#OuputStream类提供了一系列和写数据有关的方法：" class="headerlink" title="　OuputStream类提供了一系列和写数据有关的方法："></a>　OuputStream类提供了一系列和写数据有关的方法：</h5><ol>
+<li><p>write(): 向输出流写入数据：有三种重载形式：<br>a)void write(int b):向输出流写入一个字节；<br>b)void write(byte[] b): 把参数b指定的字节数组中的所有字节写到输流；<br>c)void write(byte[] b, int off, int len): 把参数b指定的字节数组中的所有字节写到输出流，参数off指定字节数组的起始下标，从这个位置开始输出由参数len指定数目的字节； 以上第一个write方法从输出流写入一个字节，而其余两个write方法从输出流批量写出若干字节。在向文件或控制台写数据时，采用后面两个write方法可以减少进行物理读文件或键盘的次数，因此能提高I/O操作的效率。</p>
+</li>
+<li><p>void close(): 关闭输出流，OutputStream类本身的close()方法不执行任何操作。它的一些子类覆盖了close()方法，在close()方法中释放和流有关的系统资源。</p>
+</li>
+<li><p>void flush(): OutputStream类本身的flush()方法不执行任何操作，它的一些带有缓冲区的子类(比如BufferedOutputStream和PrintStream类)覆盖了flush()方法。通过带缓冲区的输出流写数据时，数据先保存在缓冲区中，积累到一定程度才会真正写到输出流中。缓冲区通常用字节数组实现，实际上是指一块内存空间。flush()方法强制把缓冲区内的数据写到输出中。</p>
+</li>
+</ol>
+<h2 id="五：IO操作的步骤"><a href="#五：IO操作的步骤" class="headerlink" title="五：IO操作的步骤"></a>五：IO操作的步骤</h2><p> 1)选择合适的流<br> 2)创建流对象<br> 3)进行读写的操作<br> 4)关闭资源</p>
+<p>关注作者微信公众号：<img src="/java学习笔记-基础篇-—io流/ECJTU\hexo\source\images\qrcode_for_gh_ddaa7b9ae48a_344.jpg" alt="二维码"></p>
 
             </div>
             <hr>
@@ -563,7 +641,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/about/index.html" class="b-link-green">关于</a>
+                    <a href="/java学习笔记-基础篇-—io流.html" class="b-link-green">java学习笔记(基础篇)—IO流</a>
                 </p>
             </div>
         </div>
@@ -589,31 +667,52 @@
                 <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-基础篇-—io流.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java学习笔记(基础篇)—IO流">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">java学习笔记(基础篇)—IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">java学习笔记(基础篇)—IO流一：流的概念在Java中，把一组有序的数据序列称为流。
+
+​    如a.txt的文件拷贝到b.txt中。
+
+在Java中流是使用统一的方式操作输入和输出的数据。
+
+从文件中读取，从键盘读取，从网络中读取…</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -621,34 +720,50 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-中级篇-—单例模式.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java学习笔记(中级篇)—单例模式">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">Java学习笔记(中级篇)—单例模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">java学习笔记(中级篇)—单例模式一、概念单例模式就是在一个java应用程序中，一个class类只有一个实例。
+
+这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>

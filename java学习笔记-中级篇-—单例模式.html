@@ -4,8 +4,10 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="关于, chlinlearn">
-    <meta name="description" content="关于 | chlinlearn&#39;s blog">
+    <meta name="keywords" content="Java学习笔记(中级篇)—单例模式, chlinlearn">
+    <meta name="description" content="java学习笔记(中级篇)—单例模式一、概念单例模式就是在一个java应用程序中，一个class类只有一个实例。
+
+这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +15,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>关于 | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(中级篇)—单例模式 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -283,13 +285,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        关于
+                        Java学习笔记(中级篇)—单例模式
                     </div>
                 </div>
             </div>
@@ -379,12 +381,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/java/" target="_blank">
+                                <span class="chip bg-color">java</span>
+                            </a>
+                        
+                            <a href="/tags/基础篇/" target="_blank">
+                                <span class="chip bg-color">基础篇</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                java
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -392,14 +411,14 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-04-09
+                    2019-07-30
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1
+                        522
                     </div>
                     
 
@@ -422,7 +441,59 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p><a href="https://github.com/chlinlearn" target="_blank" rel="noopener">Github</a><br><a href="www.chlinlearn.cn">Blog</a><br><a href="chlinlearn@gmail.com">Email</a></p>
+                <h1 id="java学习笔记-中级篇-—单例模式"><a href="#java学习笔记-中级篇-—单例模式" class="headerlink" title="java学习笔记(中级篇)—单例模式"></a>java学习笔记(中级篇)—单例模式</h1><h2 id="一、概念"><a href="#一、概念" class="headerlink" title="一、概念"></a>一、概念</h2><p>单例模式就是在一个java应用程序中，一个class类只有一个实例。</p>
+<blockquote>
+<p>这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确保只有单个对象被创建。这个类提供了一种访问其唯一的对象的方式，可以直接访问，不需要实例化该类的对象。</p>
+</blockquote>
+<h2 id="二、好处"><a href="#二、好处" class="headerlink" title="二、好处"></a>二、好处</h2><p>我们知道JVM的内存资源是很宝贵的，尤其是在程序很庞大的时候，尽量减少创建不必要的对象是能够很大程度的减少内存的开销。单例模式的好处就是能够节省内存，限制了实例对象的创建。</p>
+<h2 id="三、使用场景"><a href="#三、使用场景" class="headerlink" title="三、使用场景"></a>三、使用场景</h2><p>在一个应用程序中的共享资源可以考虑使用单例模式，比如日志、配置、数据连接池、线程池等；熟悉servlet的童鞋一定知道，servlet组件也是单例模式的，因为频繁的创建servlet线程会消耗大量资源，影响系统性能，这也是单例模式的好处体现。</p>
+<h2 id="四、简单实现"><a href="#四、简单实现" class="headerlink" title="四、简单实现"></a>四、简单实现</h2><h6 id="单例模式有种实现方式："><a href="#单例模式有种实现方式：" class="headerlink" title="单例模式有种实现方式："></a>单例模式有种实现方式：</h6><ol>
+<li><p>恶汉式</p>
+<p>所谓恶汉式，就是提前先创建好实例对象，直接拿就好了；</p>
+</li>
+<li><p>懒汉式</p>
+<p>所谓懒汉式，就是需要用的时候再创建；懒汉式的缺点是非线程安全，只有加上关键字synchronized才能保证同步，但是会降低效率。</p>
+</li>
+</ol>
+<h6 id="实现要素："><a href="#实现要素：" class="headerlink" title="实现要素："></a>实现要素：</h6><ol>
+<li>构造器私有化</li>
+<li>实例对象私有化</li>
+<li>创建公有的方法返回一个实例对象</li>
+</ol>
+<h6 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h6><ol>
+<li>懒汉式</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//单例模式-懒汉式</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton singleton <span class="token operator">=</span> null<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">synchronized</span> Singleton <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>singleton<span class="token operator">==</span>null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            singleton <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> singleton<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span>
+</code></pre>
+<ol>
+<li>恶汉式</li>
+</ol>
+<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//单例模式-恶汉式</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Singleton2</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> Singleton2 singleton2 <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Singleton2</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token function">Singleton2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> Singleton2 <span class="token function">getInstance</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> singleton2<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+</code></pre>
+<p>关注作者微信公众号：<img src="/java学习笔记-中级篇-—单例模式/ECJTU\hexo\source\images\qrcode_for_gh_ddaa7b9ae48a_344.jpg" alt="二维码"></p>
 
             </div>
             <hr>
@@ -563,7 +634,7 @@
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/about/index.html" class="b-link-green">关于</a>
+                    <a href="/java学习笔记-中级篇-—单例模式.html" class="b-link-green">Java学习笔记(中级篇)—单例模式</a>
                 </p>
             </div>
         </div>
@@ -586,34 +657,53 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-基础篇-—io流.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="java学习笔记(基础篇)—IO流">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">java学习笔记(基础篇)—IO流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">java学习笔记(基础篇)—IO流一：流的概念在Java中，把一组有序的数据序列称为流。
+
+​    如a.txt的文件拷贝到b.txt中。
+
+在Java中流是使用统一的方式操作输入和输出的数据。
+
+从文件中读取，从键盘读取，从网络中读取…</div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
+                        </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -621,34 +711,49 @@
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge right-badge text-color">
-                本篇&nbsp;<i class="fa fa-dot-circle-o"></i>
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/about/index.html">
+                <a href="/java学习笔记-初级篇-—网络.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="关于">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="Java学习笔记(初级篇)—网络">
                         
-                        <span class="card-title">关于</span>
+                        <span class="card-title">Java学习笔记(初级篇)—网络</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">GithubBlogEmail
-</div>
+                    <div class="summary">java学习笔记(初级篇)—网络一：计算机网络计算机网络是连接全球计算机资源的网络环境可以资源共享，通信等最简单的网络形式由两台计算机组成。
+二：网络的协议协议：在网络上进行数据通信(数据交换)时所使用的规范(标准)。不同层具有各自不同的协</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-04-09
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fa fa-user fa-fw"></i>
-                            chlinlearn
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/java/" class="post-category" target="_blank">
+                                    java
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
-
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/java/" target="_blank">
+                        <span class="chip bg-color">java</span>
+                    </a>
+                    
+                    <a href="/tags/基础篇/" target="_blank">
+                        <span class="chip bg-color">基础篇</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
