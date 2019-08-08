@@ -4,12 +4,9 @@
 
 <head><meta name="generator" content="Hexo 3.8.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Java学习笔记(基础篇)—关键字static和final, chlinlearn">
-    <meta name="description" content="java学习笔记(基础篇)—关键字static和final一、关键字Static
-我们从关键字static可以修饰哪些东西入手，逐一的剖析static的使用和要注意的地方。
-
-1)修饰变量(只能修饰实例变量)—–&amp;gt;静态变量
-又称为类变">
+    <meta name="keywords" content="Java学习笔记(中级篇)—java实现高质量图片压缩, chlinlearn">
+    <meta name="description" content="java实现高质量图片压缩使用java几十行代码实现一个高质量图片压缩程序，再也不用去自己找网络的压缩程序啦！而且很多网上的工具还有水印或者其他的限制，自己动手写一个简单的应用，是再合适不过了。
+一、实现原理1、声明两个字符串变量，分别是要">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -17,7 +14,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Java学习笔记(基础篇)—关键字static和final | chlinlearn&#39;s blog</title>
+    <title>Java学习笔记(中级篇)—java实现高质量图片压缩 | chlinlearn&#39;s blog</title>
     <link rel="icon" type="image/jpeg" href="/favicon.jpg">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -287,13 +284,13 @@
 
 
 
-<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+<div class="bg-cover post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Java学习笔记(基础篇)—关键字static和final
+                        Java学习笔记(中级篇)—java实现高质量图片压缩
                     </div>
                 </div>
             </div>
@@ -389,8 +386,8 @@
                                 <span class="chip bg-color">java</span>
                             </a>
                         
-                            <a href="/tags/基础篇/" target="_blank">
-                                <span class="chip bg-color">基础篇</span>
+                            <a href="/tags/中级篇/" target="_blank">
+                                <span class="chip bg-color">中级篇</span>
                             </a>
                         
                     </div>
@@ -413,21 +410,21 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-07-21
+                    2019-08-02
                 </div>
 
                 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.3k
+                        713
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        4 分
+                        3 分
                     </div>
                     
                 
@@ -443,97 +440,102 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="java学习笔记-基础篇-—关键字static和final"><a href="#java学习笔记-基础篇-—关键字static和final" class="headerlink" title="java学习笔记(基础篇)—关键字static和final"></a>java学习笔记(基础篇)—关键字static和final</h1><h2 id="一、关键字Static"><a href="#一、关键字Static" class="headerlink" title="一、关键字Static"></a>一、关键字Static</h2><blockquote>
-<p>我们从关键字static可以修饰哪些东西入手，逐一的剖析static的使用和要注意的地方。</p>
-</blockquote>
-<h3 id="1-修饰变量-只能修饰实例变量-—–-gt-静态变量"><a href="#1-修饰变量-只能修饰实例变量-—–-gt-静态变量" class="headerlink" title="1)修饰变量(只能修饰实例变量)—–&gt;静态变量"></a>1)修饰变量(只能修饰实例变量)—–&gt;静态变量</h3><blockquote>
-<p>又称为类变量</p>
-</blockquote>
-<p>a)所有类实例共享<br>b)使用静态变量<br>    类名.变量名<br>c)静态变量是属于这个类，非静态变量是属于对象<br>d)代码加载到内存静态变量就已经存在了<br>e)static变量和实例变量的区别：<br>     i)static变量对于每个类而言在内存中只有一个，能被类的所有实例所共享；<br>        实例变量对于每个类的每个实例都有一份，它们之间互不影响；<br>     ii)Java虚拟机在加载类的过程中为static变量分配内存，<br>         实例变量在加载完类后创建对象时分配内存；<br>     iii)static变量存在方法区，实例变量存在堆区；<br>     v)static变量可以直接通过类名访问，<br>        实例变量通过引用类型变量访问；</p>
-<h3 id="2-修饰方法-gt-静态方法"><a href="#2-修饰方法-gt-静态方法" class="headerlink" title="2)修饰方法====&gt;静态方法"></a>2)修饰方法====&gt;静态方法</h3><blockquote>
-<p>称为类方法</p>
-</blockquote>
-<p>a)调用时使用<br>    类名.方法名();<br>b)静态方法不能使用非静态的变量<br>    静态方法在类加载的时候就存在了<br>    非静态变量在对象创建的时候才存在的<br>    非静态方法可以访问静态变量<br>c)静态方法不能被非静态方法重写，静态方法不能被静态方法重写(总之就是不能被    重写)<br>d)静态方法用来表示某个类所特有的功能，这种功能的实现不依赖于类的具体实例，也不依赖于它的子类。既然如此，当前类必须为静态方法提供实现。静态方法属于类。<br>e)不能使用this关键字和super关键字；（考虑它的生命周期来理解）</p>
-<blockquote>
-<p>this表示的当前对象，而被static修饰的是属于类的，不需要创建对象就可以使用；super是代表父类对象，调用父类的静态方法直接使用类名.方法名就可以。</p>
-</blockquote>
-<h3 id="3-静态初始化块—-在类加载时只执行一次"><a href="#3-静态初始化块—-在类加载时只执行一次" class="headerlink" title="3)静态初始化块—-在类加载时只执行一次"></a>3)静态初始化块—-在类加载时只执行一次</h3><p>​     对静态变量进行初始化，当Java虚似机加载类时，就会执行该代码块；被static     所修饰的成员变量和成员方法表明归某个类所有，它不依赖于类的特定实例，被        类的所有实例共享。只要这个类被加载，Java虚拟机就能根据类名在运行时数据     区的方法区内定位到它们。而且只会被加载一次。         </p>
-<pre class=" language-java"><code class="language-java">     <span class="token keyword">static</span><span class="token punctuation">{</span>
-         System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello static"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-     <span class="token punctuation">}</span>
+                <h1 id="java实现高质量图片压缩"><a href="#java实现高质量图片压缩" class="headerlink" title="java实现高质量图片压缩"></a>java实现高质量图片压缩</h1><p>使用java几十行代码实现一个高质量图片压缩程序，再也不用去自己找网络的压缩程序啦！而且很多网上的工具还有水印或者其他的限制，自己动手写一个简单的应用，是再合适不过了。</p>
+<h2 id="一、实现原理"><a href="#一、实现原理" class="headerlink" title="一、实现原理"></a>一、实现原理</h2><p>1、声明两个字符串变量，分别是要压缩图片的路径和压缩后图片的存放路径</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">private</span> String brfore_image_path <span class="token operator">=</span> <span class="token string">"D:\\01.jpg"</span><span class="token punctuation">;</span>
+<span class="token keyword">private</span> String after_image_path <span class="token operator">=</span> <span class="token string">"D:\\temp"</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="4-普通初始化—-每创建一个对象都会被调用的"><a href="#4-普通初始化—-每创建一个对象都会被调用的" class="headerlink" title="4)普通初始化—-每创建一个对象都会被调用的"></a>4)普通初始化—-每创建一个对象都会被调用的</h3><p>对非静态变量进行初始化：</p>
-<pre class=" language-java"><code class="language-java">      <span class="token punctuation">{</span>
-          System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"hello static"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-      <span class="token punctuation">}</span>
+<p>2、利用字符串的方法lastIndexOf，找到<strong>\和.</strong>最后出现的位置，目的是匹配到图片文件名。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> begin <span class="token operator">=</span> brfore_image_path<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">int</span> end <span class="token operator">=</span> brfore_image_path<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+String image_name<span class="token operator">=</span>brfore_image_path<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>begin<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
 </code></pre>
-<h3 id="5-静态导入"><a href="#5-静态导入" class="headerlink" title="5)静态导入"></a>5)静态导入</h3><blockquote>
-<p>这个用法一般不太出现，很少使用。</p>
-</blockquote>
-<p>import java.lang.Math;<br>     使用：Math.random()</p>
-<p>import static java.lang.Math.*;<br>    使用：random()</p>
-<h3 id="6-补充知识"><a href="#6-补充知识" class="headerlink" title="6)补充知识"></a>6)补充知识</h3><blockquote>
-<p>创建一个对象时的类加载步骤或者说顺序: Student student =new Student();猜猜它的执行顺序会是什么？我们来理一理逻辑，子类继承父类，创建一个子类对象首先要有一个父类被创建，Student（）构造器里默认有一个super()方法，所有会先初始化父类，然后是初始化子类的部分。下面来看具体的步骤：</p>
-</blockquote>
-<pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">Student</span> <span class="token keyword">extends</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> String name<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> <span class="token keyword">int</span> age<span class="token punctuation">;</span>
+<p>3、创建BufferedImage对象来读取需要压缩的图片</p>
+<p>4、获取原始图片的一系列参数</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">int</span> in_width  <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//图宽</span>
+<span class="token keyword">int</span> in_height <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//图高</span>
+<span class="token keyword">int</span> in_minx   <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getMinX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//BufferedImage的最小x</span>
+<span class="token keyword">int</span> in_miny   <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getMinY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//BufferedImage的最小y</span>
+<span class="token keyword">int</span> type <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//返回图像类型</span>
+<span class="token keyword">int</span> out_width <span class="token operator">=</span> in_width<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//要输出图像的宽</span>
+<span class="token keyword">int</span> out_height <span class="token operator">=</span> in_height<span class="token punctuation">;</span><span class="token comment" spellcheck="true">//要输出图像的高</span>
+<span class="token keyword">int</span> multiple <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//系数</span>
+</code></pre>
+<p>5、压缩核心代码，可自己调试找最适合的临界值，我选取的是大于1000000像素点时就压缩一半</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">while</span><span class="token punctuation">(</span>out_width <span class="token operator">*</span> out_height <span class="token operator">></span> <span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    out_width <span class="token operator">=</span> out_width<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+    out_height <span class="token operator">=</span> out_height<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+    multiple <span class="token operator">=</span> multiple <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    
+</code></pre>
+<p>6、创建新的BufferedImage对象，把新的参数传进去，并根据系数把一个个像素点写进图片。</p>
+<pre class=" language-java"><code class="language-java"><span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>out_width<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>out_height<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>      intpixel<span class="token operator">=</span>bi<span class="token punctuation">.</span><span class="token function">getRGB</span><span class="token punctuation">(</span>i<span class="token operator">*</span>multiple<span class="token operator">+</span>in_minx<span class="token punctuation">,</span>j<span class="token operator">*</span>multiple<span class="token operator">+</span>in_miny<span class="token punctuation">)</span><span class="token punctuation">;</span>
+ ut_image_martrix<span class="token punctuation">.</span><span class="token function">setRGB</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> pixel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre>
+<p>7、把新的BufferedImage对象写到你要保存压缩图片的地址就好了。</p>
+<h2 id="二、完整代码"><a href="#二、完整代码" class="headerlink" title="二、完整代码"></a>二、完整代码</h2><pre class=" language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CompressImage</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> String brfore_image_path <span class="token operator">=</span> <span class="token string">"D:\\01.jpg"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> String after_image_path <span class="token operator">=</span> <span class="token string">"D:\\temp"</span><span class="token punctuation">;</span>
 
-    <span class="token keyword">public</span> <span class="token function">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this student constructor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token function">CompressImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
     <span class="token punctuation">}</span>
 
-    <span class="token keyword">static</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this is student static block"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">get_image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">int</span> begin <span class="token operator">=</span> brfore_image_path<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"\\"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> end <span class="token operator">=</span> brfore_image_path<span class="token punctuation">.</span><span class="token function">lastIndexOf</span><span class="token punctuation">(</span><span class="token string">"."</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        String image_name <span class="token operator">=</span> brfore_image_path<span class="token punctuation">.</span><span class="token function">substring</span><span class="token punctuation">(</span>begin<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>end<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        File in_file <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>brfore_image_path<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        BufferedImage bi <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token keyword">try</span> <span class="token punctuation">{</span>
+            bi <span class="token operator">=</span> ImageIO<span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>in_file<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">int</span> in_width  <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getWidth</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> in_height <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getHeight</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> in_minx   <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getMinX</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> in_miny   <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getMinY</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> type <span class="token operator">=</span> bi<span class="token punctuation">.</span><span class="token function">getType</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">int</span> out_width <span class="token operator">=</span> in_width<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> out_height <span class="token operator">=</span> in_height<span class="token punctuation">;</span>
+        <span class="token keyword">int</span> multiple <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">//具体的值可调</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>out_width <span class="token operator">*</span> out_height <span class="token operator">></span> <span class="token number">1000000</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            out_width <span class="token operator">=</span> out_width<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+            out_height <span class="token operator">=</span> out_height<span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">;</span>
+            multiple <span class="token operator">=</span> multiple <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>    
+        BufferedImage out_image_martrix <span class="token operator">=</span> <span class="token keyword">new</span>              <span class="token class-name">BufferedImage</span><span class="token punctuation">(</span>out_width<span class="token punctuation">,</span> out_height<span class="token punctuation">,</span> type<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>out_width<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> j <span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span>j<span class="token operator">&lt;</span>out_height<span class="token punctuation">;</span>j<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">int</span> pixel <span class="token operator">=</span>bi<span class="token punctuation">.</span><span class="token function">getRGB</span><span class="token punctuation">(</span>i<span class="token operator">*</span>multiple<span class="token operator">+</span>in_minx<span class="token punctuation">,</span> j<span class="token operator">*</span>multiple<span class="token operator">+</span>in_miny<span class="token punctuation">)</span><span class="token punctuation">;</span>
+                out_image_martrix<span class="token punctuation">.</span><span class="token function">setRGB</span><span class="token punctuation">(</span>i<span class="token punctuation">,</span> j<span class="token punctuation">,</span> pixel<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">try</span><span class="token punctuation">{</span>
+            after_image_path <span class="token operator">=</span> after_image_path <span class="token operator">+</span> image_name <span class="token operator">+</span> <span class="token string">".jpg"</span><span class="token punctuation">;</span>
+            ImageIO<span class="token punctuation">.</span><span class="token function">write</span><span class="token punctuation">(</span>out_image_martrix<span class="token punctuation">,</span><span class="token string">"jpg"</span><span class="token punctuation">,</span> <span class="token keyword">new</span> <span class="token class-name">File</span><span class="token punctuation">(</span>new_path<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            bi <span class="token operator">=</span> null<span class="token punctuation">;</span>
+            out_image_martrix <span class="token operator">=</span> null<span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token keyword">catch</span><span class="token punctuation">(</span>Exception e<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            e<span class="token punctuation">.</span><span class="token function">printStackTrace</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
     <span class="token punctuation">}</span>
 
-    <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello student"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
+    <span class="token comment" spellcheck="true">//测试代码</span>
     <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        Student stu <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Student</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span>
-
-<span class="token keyword">class</span> <span class="token class-name">Person</span><span class="token punctuation">{</span>
-    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">int</span> count<span class="token punctuation">;</span>
-    <span class="token keyword">private</span> String title<span class="token punctuation">;</span>
-
-    <span class="token keyword">public</span> <span class="token function">Person</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this person constructor"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-    <span class="token keyword">static</span> <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"this is person static block"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token punctuation">{</span>
-        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"hello person"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">new</span> <span class="token class-name">CompressImage</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get_image</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre>
-<ol>
-<li>父类初始化静态变量和静态代码块(按先后顺序执行)；</li>
-<li>子类初始化静态变量和静态代码块(按先后顺序执行)；</li>
-<li>父类初始化非静态变量和非静态代码块(按先后顺序执行)；</li>
-<li>父类构造器</li>
-<li>子类初始化非静态变量和非静态代码块(按先后顺序执行)；</li>
-<li>子类构造器</li>
-</ol>
-<pre class=" language-java"><code class="language-java"><span class="token comment" spellcheck="true">//运行结果</span>
-<span class="token keyword">this</span> is person <span class="token keyword">static</span> block
-<span class="token keyword">this</span> is student <span class="token keyword">static</span> block
-hello person
-<span class="token keyword">this</span> person constructor
-hello student
-<span class="token keyword">this</span> student constructor
-</code></pre>
-<h2 id="二、关键字final"><a href="#二、关键字final" class="headerlink" title="二、关键字final"></a>二、关键字final</h2><h3 id="1-修饰变量—-gt-常量"><a href="#1-修饰变量—-gt-常量" class="headerlink" title="1)修饰变量—-&gt;常量"></a>1)修饰变量—-&gt;常量</h3><p>​        变量必须初始化，变量的值不允许修改。<br>​        final变量都必须显示初始化，<br>​        a) 修饰静态变量，只能在定义变量时进行初始化；<br>​        b) 修饰实例变量，可以在定义变量时进行初始化，或者在构造方法中进行初始                化；</p>
-<h3 id="2-修饰方法"><a href="#2-修饰方法" class="headerlink" title="2)修饰方法"></a>2)修饰方法</h3><p>​      该方法不能够被重写</p>
-<h3 id="3-修饰类"><a href="#3-修饰类" class="headerlink" title="3)修饰类"></a>3)修饰类</h3><p>​      该类不能够被继承,即不能与abstract同时使用。<br>​      String类就是final修饰的类，所有字符串是不能改变的，只能通过拼接创建新的         String对象，这样很浪费内存，所以又有了StringBuilder和StringBuffer；这两      个类后面再解释，可以去思考和看他们的实现源码。</p>
-<h2 id="三、思考final、finally和finalize的区别"><a href="#三、思考final、finally和finalize的区别" class="headerlink" title="三、思考final、finally和finalize的区别"></a>三、思考final、finally和finalize的区别</h2><blockquote>
-<p>后面出一篇关于这个的文章，敬请关注。</p>
-</blockquote>
+<h2 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h2><p>代码挺简单的，但是自己动手实现完成一个小功能也不一样哦，而且我觉得压缩的质量还挺高的，所以把自己的实现思路和代码分享出来。有兴趣的童鞋可以自己复制上面的完整代码，只要改成自己的路径就可以运行了。当然啦，几行代码无法媲美专业的压缩工具啦~</p>
+<p>喜欢我文章的朋友不要吝啬你的关注哟~</p>
+<p><img src="/java学习笔记-中级篇-—java实现高质量图片压缩/ECJTU\hexo\source\images\公众号-1565263433845.png" alt="长按识别二维码"></p>
 
             </div>
             <hr>
@@ -674,7 +676,7 @@ hello student
                     </span>
                     <a href="https://chlinlearn.cn" class="b-link-green">chlinlearn's blog</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/java学习笔记-基础篇-—关键字static和final.html" class="b-link-green">Java学习笔记(基础篇)—关键字static和final</a>
+                    <a href="/java学习笔记-中级篇-—java实现高质量图片压缩.html" class="b-link-green">Java学习笔记(中级篇)—java实现高质量图片压缩</a>
                 </p>
             </div>
         </div>
@@ -697,23 +699,25 @@ hello student
         
         <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—面向对象编程之封装、多态和继承.html">
+                <a href="/java学习笔记-中级篇-—java实现高质量图片压缩.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—面向对象编程之封装、多态和继承">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="Java学习笔记(中级篇)—java实现高质量图片压缩">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—面向对象编程之封装、多态和继承</span>
+                        <span class="card-title">Java学习笔记(中级篇)—java实现高质量图片压缩</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java学习笔记(基础篇)—面向对象编程之封装、多态和继承一. OOP中的基本概念Java的编程语言是面向对象的，采用这种语言进行编程称为面向对象编程(Object-Oriented Programming, OOP)， 它允许设计者将面向</div>
+                    <div class="summary">java实现高质量图片压缩使用java几十行代码实现一个高质量图片压缩程序，再也不用去自己找网络的压缩程序啦！而且很多网上的工具还有水印或者其他的限制，自己动手写一个简单的应用，是再合适不过了。
+一、实现原理1、声明两个字符串变量，分别是要</div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-22
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-02
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -726,6 +730,7 @@ hello student
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -733,8 +738,8 @@ hello student
                         <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="/tags/基础篇/" target="_blank">
-                        <span class="chip bg-color">基础篇</span>
+                    <a href="/tags/中级篇/" target="_blank">
+                        <span class="chip bg-color">中级篇</span>
                     </a>
                     
                 </div>
@@ -748,20 +753,22 @@ hello student
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/java学习笔记-基础篇-—反射.html">
+                <a href="/java学习笔记-中级篇-—单例模式.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="Java学习笔记(基础篇)—反射">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="Java学习笔记(中级篇)—单例模式">
                         
-                        <span class="card-title">Java学习笔记(基础篇)—反射</span>
+                        <span class="card-title">Java学习笔记(中级篇)—单例模式</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
-                    <div class="summary">java学习笔记(基础篇)—反射一、反射 ：自描述或者自定义一个类或者对象通过反射可以获得自身的对象，该对象是一个java.lang.Class的对象(就像一个镜像文件)。一个对象或者类获得自身的Class对象的过程称为反射。java.la</div>
+                    <div class="summary">java学习笔记(中级篇)—单例模式一、概念单例模式就是在一个java应用程序中，一个class类只有一个实例。
+
+这种类型的设计模式属于创建型模式，它提供了一种创建对象的最佳方式。这种模式涉及到一个单一的类，该类负责创建自己的对象，同时确</div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-21
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-07-30
                             </span>
                         <span class="publish-author">
                             
@@ -782,8 +789,8 @@ hello student
                         <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="/tags/基础篇/" target="_blank">
-                        <span class="chip bg-color">基础篇</span>
+                    <a href="/tags/中级篇/" target="_blank">
+                        <span class="chip bg-color">中级篇</span>
                     </a>
                     
                 </div>

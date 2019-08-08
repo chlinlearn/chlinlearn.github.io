@@ -1,1 +1,1 @@
-https://chlinlearn.cn/java学习笔记-基础篇-—io流.html
+https://chlinlearn.cn/java学习笔记-中级篇-—java实现高质量图片压缩.html
